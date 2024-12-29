@@ -31,10 +31,9 @@ interface LayoutProps {
 export function Layout({ children }: LayoutProps) {
   return (
     <>
-      <main className="min-h-screen bg-[#f5ede4] px-8">
+      <main className="min-h-screen bg-[#f5ede4] p-4 md:px-8">
         {" "}
         {/* bg-[#e3f1ff]*/}
-        <Header />
         {children}
       </main>
     </>
@@ -54,21 +53,29 @@ export default function Home() {
         <link rel="icon" href="/logo.png" />
       </Head>
       <Layout>
-        <section className="flex">
-          <div className="flex min-h-screen flex-col gap-2">
+        <section className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-3 lg:gap-8">
+          <div className="flex flex-col gap-2 lg:min-h-screen">
             <Image
               src="/logo_plain_orange.png"
               alt="MV'z Kitchen Logo"
               width={1024}
               height={1024}
               draggable="false"
-              className="max-w-xl pt-32"
+              className="hidden h-32 lg:block lg:h-auto lg:w-full lg:pt-32"
             />
-            <ul className="flex select-none flex-col gap-4 p-4 pl-16 text-2xl font-bold">
+            <Image
+              src="/wider.png"
+              alt="MV'z Kitchen Logo"
+              width={1024}
+              height={1024}
+              draggable="false"
+              className="-mb-12 -mt-8 w-full lg:hidden"
+            />
+            <ul className="grid select-none grid-cols-2 gap-2 p-4 font-bold lg:grid-cols-1 lg:gap-4 lg:pl-11 lg:text-2xl">
               <li>
                 <Link
                   href="/menu"
-                  className="group flex items-center gap-2 hover:underline"
+                  className="group flex items-center justify-between gap-2 hover:underline lg:justify-normal"
                   draggable="false"
                 >
                   Menu{" "}
@@ -78,7 +85,7 @@ export default function Home() {
               <li>
                 <Link
                   href="/catering"
-                  className="group flex items-center gap-2 hover:underline"
+                  className="group flex items-center justify-between gap-2 hover:underline lg:justify-normal"
                   draggable="false"
                 >
                   Catering{" "}
@@ -88,7 +95,7 @@ export default function Home() {
               <li>
                 <Link
                   href="/contact"
-                  className="group flex items-center gap-2 hover:underline"
+                  className="group flex items-center justify-between gap-2 hover:underline lg:justify-normal"
                   draggable="false"
                 >
                   Contact{" "}
@@ -99,7 +106,7 @@ export default function Home() {
                 <a
                   href="https://www.instagram.com/mvzkitchen/"
                   target="_blank"
-                  className="group flex items-center gap-2 hover:underline"
+                  className="group flex items-center justify-between gap-2 hover:underline lg:justify-normal"
                   draggable="false"
                 >
                   Instagram{" "}
@@ -110,7 +117,7 @@ export default function Home() {
                 <a
                   href="https://www.facebook.com/people/Mvz-Kitchen/pfbid02j42XzQQ3n1bCXXr14YsP7XuQ7rgp9aYDXX76P1XM6fn1zLk4jmSjtt3R8TkXWj25l/?mibextid=LQQJ4d"
                   target="_blank"
-                  className="group flex items-center gap-2 hover:underline"
+                  className="group flex items-center justify-between gap-2 hover:underline lg:justify-normal"
                   draggable="false"
                 >
                   Facebook{" "}
@@ -120,7 +127,7 @@ export default function Home() {
             </ul>
           </div>
 
-          <div className="flex-1 py-8">
+          <div className="md:py-8 lg:col-span-2">
             <Image
               src="/HeroCropped.png"
               alt="MV'z Kitchen Logo"
@@ -128,14 +135,14 @@ export default function Home() {
               height={1407}
             />
 
-            <p className="text-2xl font-bold">
+            <p className="font-bold md:text-2xl">
               Experience the freshest Indian food in Kitchener, Waterloo, and
               Cambridge. Join us to savor a fusion of traditional flavors and
               modern twists, bringing the vibrant tastes of Indian restaurants
               to you.
             </p>
             <hr className="my-8 border border-black" />
-            <div className="grid grid-cols-3 gap-2">
+            <div className="grid gap-8 lg:grid-cols-3 lg:gap-2">
               <div>
                 <h2 className="text-lg font-extrabold">Hours</h2>
                 <br />
