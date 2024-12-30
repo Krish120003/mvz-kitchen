@@ -20,7 +20,7 @@ export const FoodTruckMenuItems: MenuItem[] = [
   {
     name: "Dahi Bhalla",
     description:
-      "Fried lentil balls soaked in yogurt, tamarind chutney, and spices.",
+      "Fried lentil balls soaked in yogurt, sweet chutney, and spices.",
     category: "Snacks",
   },
   {
@@ -31,12 +31,14 @@ export const FoodTruckMenuItems: MenuItem[] = [
   },
   {
     name: "Samosa Chana Chat",
-    description: "Crispy samosas served with chickpeas, chutneys, and spices.",
+    description:
+      "Crispy samosas served with chickpea gravy, chutneys, and spices.",
     category: "Snacks",
   },
   {
     name: "Noodle Burger",
-    description: "A unique burger made with noodles as the patty.",
+    description:
+      "A Indo-Chinese burger loaded with noodles, potato patty and veggies.",
     category: "Main Course",
   },
   {
@@ -57,22 +59,23 @@ export const FoodTruckMenuItems: MenuItem[] = [
   },
   {
     name: "Chaap Kulcha",
-    description: "A stuffed Indian bread filled with marinated soy protein.",
+    description:
+      "Tandoori marinated soy protein and gravy and served with soft Indian kulcha bread.",
     category: "Main Course",
   },
   {
     name: "Aloo Tikki Burger",
-    description: "A veggie burger made with potato patties.",
+    description: "A burger loaded with potato patties, paneer and veggies.",
     category: "Main Course",
   },
   {
-    name: "Chana (Chickpea) Rice",
-    description: "Rice cooked with spiced chickpeas.",
+    name: "Chana Rice",
+    description: "Rice served with chickpea curry.",
     category: "Main Course",
   },
   {
-    name: "Rajma (Kidney Beans) Rice",
-    description: "Rice cooked with spiced kidney beans.",
+    name: "Rajma Rice",
+    description: "Rice served with bean curry.",
     category: "Main Course",
   },
   {
@@ -92,11 +95,11 @@ export const FoodTruckMenuItems: MenuItem[] = [
   },
   {
     name: "Mix Fruit Juice",
-    description: "A blend of orange, apple, pineapple, and carrot juices.",
+    description: "A blend of orange, apple, and pineapple juices.",
     category: "Drinks",
   },
   {
-    name: "Pepsi",
+    name: "Pop",
     description: "A carbonated soft drink.",
     category: "Drinks",
   },
@@ -106,9 +109,36 @@ export const FoodTruckMenuItems: MenuItem[] = [
     category: "Drinks",
   },
   {
-    name: "Keser Milk Bodam",
+    name: "Keser Milk Badam",
     description: "A sweet, saffron-flavored milk drink.",
     category: "Drinks",
+  },
+  {
+    name: "Pav Bhaji",
+    description: "A spicy vegetable curry served with buttered bread rolls.",
+    category: "Main Course",
+  },
+  {
+    name: "Steamed Momos",
+    description:
+      "Steamed dumplings filled with vegetables and aromatic spices.",
+    category: "Snacks",
+  },
+  {
+    name: "Fried Momos",
+    description: "Crispy fried dumplings filled with vegetables and spices.",
+    category: "Snacks",
+  },
+  {
+    name: "Mango Lassi",
+    description: "A sweet yogurt-based drink blended with mango pulp.",
+    category: "Drinks",
+  },
+  {
+    name: "Desi Ghee Tava Aloo Tikki",
+    description:
+      "Crispy potato patties cooked in clarified butter served with sweet chutney, fresh yogurt, pomogranate, and spices.",
+    category: "Snacks",
   },
 ];
 
@@ -116,7 +146,8 @@ export const CateringMenuItems: MenuItem[] = [
   // Page 1
   {
     name: "Dahi Bhalla",
-    description: "Yogurt and lentil fritters",
+    description:
+      "Fried lentil balls soaked in yogurt, sweet chutney, and spices.",
     category: "Appetizers",
   },
   {
@@ -143,19 +174,19 @@ export const CateringMenuItems: MenuItem[] = [
     category: "Appetizers",
   },
   {
-    name: "Desi Ghee Aloo Tikki Chat",
+    name: "Desi Ghee Tava Aloo Tikki",
     description:
-      "Potato patties cooked in ghee, served with chickpeas and chutneys.",
+      "Crispy potato patties cooked in clarified butter served with sweet chutney, fresh yogurt, pomogranate, and spices.",
     category: "Appetizers",
   },
   {
     name: "Steamed Momos",
-    description: "Steamed dumplings filled with vegetables or meat.",
+    description: "Steamed dumplings filled with vegetables.",
     category: "Appetizers",
   },
   {
     name: "Fried Momos",
-    description: "Pan-fried dumplings filled with vegetables or meat.",
+    description: "Pan-fried dumplings filled with vegetables.",
     category: "Appetizers",
   },
   {
@@ -168,19 +199,14 @@ export const CateringMenuItems: MenuItem[] = [
     description: "French fries seasoned with Indian spices.",
     category: "Appetizers",
   },
-  {
-    name: "Loaded Fries",
-    description: "French fries topped with cheese, bacon, and other toppings.",
-    category: "Appetizers",
-  },
+  // {
+  //   name: "Loaded Fries",
+  //   description: "French fries topped with cheese, bacon, and other toppings.",
+  //   category: "Appetizers",
+  // },
   {
     name: "Poutine",
-    description: "French fries topped with cheese curds and gravy.",
-    category: "Appetizers",
-  },
-  {
-    name: "Cheese Fingers",
-    description: "Deep-fried cheese sticks.",
+    description: "French fries topped with cheese curds and vegetarian gravy.",
     category: "Appetizers",
   },
   {
@@ -198,87 +224,109 @@ export const CateringMenuItems: MenuItem[] = [
     description: "Bread rolls filled with cheese and corn.",
     category: "Appetizers",
   },
+  // ============================================================
   {
-    name: "Rajma Rice",
-    description: "Rice cooked with kidney beans.",
+    name: "Rajma",
+    description: "Kidney beans cooked in a spicy gravy.",
     category: "Mains",
   },
   {
-    name: "Chana Rice",
-    description: "Rice cooked with chickpeas.",
+    name: "Chana Masala",
+    description: "Chickpeas cooked in a spicy sauce.",
     category: "Mains",
   },
+
+  // {
+  //   name: "Plain Parantha + Dal Makhani",
+  //   description: "Plain Indian flatbread served with creamy lentils.",
+  //   category: "Paranthas",
+  // },
+  // {
+  //   name: "Stuffed Parantha + Plain Dahi",
+  //   description: "Stuffed Indian flatbread served with plain yogurt.",
+  //   category: "Paranthas",
+  // },
+  // {
+  //   name: "Stuffed Parantha + Dal Makhani",
+  //   description: "Stuffed Indian flatbread served with creamy lentils.",
+  //   category: "Paranthas",
+  // },
   {
-    name: "Pav Bhaji",
-    description: "A spicy vegetable curry served with bread rolls.",
-    category: "Mains",
-  },
-  {
-    name: "Chana Kulcha",
-    description: "Indian bread filled with spiced chickpeas.",
-    category: "Mains",
-  },
-  {
-    name: "Stuffed Chana Kulcha",
-    description: "Indian bread filled with spiced chickpeas.",
-    category: "Mains",
-  },
-  {
-    name: "Tandoori Soya Chaap",
-    description: "Grilled marinated soy protein.",
-    category: "Mains",
-  },
-  {
-    name: "Tava Soya Chaap + Kulcha",
-    description: "Soya chaap cooked on a tava (griddle) served with kulcha.",
-    category: "Mains",
-  },
-  {
-    name: "Tava Soya Chaap + Lachha P.",
-    description: "Soya chaap cooked on a tava served with lachha paratha.",
-    category: "Mains",
-  },
-  {
-    name: "Soya Chaap Rolls",
-    description: "Soya chaap wrapped in roti.",
-    category: "Mains",
-  },
-  {
-    name: "Paneer Rolls",
-    description: "Paneer (Indian cheese) wrapped in roti.",
-    category: "Mains",
-  },
-  {
-    name: "Aloo Tikki Burger",
-    description: "A veggie burger made with potato patties.",
-    category: "Burgers",
-  },
-  {
-    name: "Noodle Burger",
-    description: "A unique burger made with noodles as the patty.",
-    category: "Burgers",
-  },
-  {
-    name: "Fully Loaded Burger",
-    description: "A burger with all the fixings.",
-    category: "Burgers",
-  },
-  {
-    name: "Plain Parantha + Dal Makhani",
-    description: "Plain Indian flatbread served with creamy lentils.",
+    name: "Plain Parantha",
+    description: "Plain Indian flatbread.",
     category: "Paranthas",
   },
   {
-    name: "Stuffed Parantha + Plain Dahi",
-    description: "Stuffed Indian flatbread served with plain yogurt.",
+    name: "Stuffed Parantha",
+    description: "Stuffed Indian flatbread.",
     category: "Paranthas",
   },
   {
-    name: "Stuffed Parantha + Dal Makhani",
-    description: "Stuffed Indian flatbread served with creamy lentils.",
+    name: "Aloo Parantha",
+    description: "Indian bread stuffed with spiced potatoes.",
     category: "Paranthas",
   },
-  // Page 2
+  {
+    name: "Gobi Parantha",
+    description: "Indian bread stuffed with spiced cauliflower.",
+    category: "Paranthas",
+  },
+  {
+    name: "Paneer Parantha",
+    description: "Indian bread stuffed with spiced paneer.",
+    category: "Paranthas",
+  },
+  {
+    name: "Methi Parantha",
+    description: "Indian bread stuffed with fenugreek leaves.",
+    category: "Paranthas",
+  },
+  {
+    name: "Mooli Parantha",
+    description: "Indian bread stuffed with radish.",
+    category: "Paranthas",
+  },
+  {
+    name: "Lachha Parantha",
+    description: "Layered Indian bread.",
+    category: "Paranthas",
+  },
+  {
+    name: "Butter Naan",
+    description: "Leavened Indian bread cooked in a tandoor.",
+    category: "Paranthas",
+  },
+  {
+    name: "Garlic Naan",
+    description: "Leavened Indian bread with garlic.",
+    category: "Paranthas",
+  },
+  {
+    name: "Plain Naan",
+    description: "Leavened Indian bread.",
+    category: "Paranthas",
+  },
+  {
+    name: "Kulcha",
+    description: "Leavened Indian bread.",
+    category: "Paranthas",
+  },
+  {
+    name: "Stuffed Kulcha",
+    description: "Leavened Indian bread stuffed with spiced potatoes.",
+    category: "Paranthas",
+  },
+  {
+    name: "Puri",
+    description: "Deep-fried Indian bread with a puffed texture.",
+    category: "Paranthas",
+  },
+  {
+    name: "Bhature",
+    description:
+      "A fluffy, soft deep-fried Indian bread made with maida flour and yogurt.",
+    category: "Paranthas",
+  },
   {
     name: "Dal Makhani",
     description: "Creamy lentils cooked with butter and cream.",
@@ -287,16 +335,6 @@ export const CateringMenuItems: MenuItem[] = [
   {
     name: "Yellow Dal Tadka",
     description: "Yellow lentils tempered with spices.",
-    category: "Mains",
-  },
-  {
-    name: "Rajma",
-    description: "Kidney beans cooked in a spicy gravy.",
-    category: "Mains",
-  },
-  {
-    name: "Chana Masala",
-    description: "Chickpeas cooked in a spicy tomato-based sauce.",
     category: "Mains",
   },
   {
@@ -326,12 +364,13 @@ export const CateringMenuItems: MenuItem[] = [
   },
   {
     name: "Aloo Gobi",
-    description: "Potatoes and cauliflower cooked in a spicy sauce.",
+    description: "Potatoes and cauliflower cooked to a spicy dish.",
     category: "Mains",
   },
   {
     name: "Mix Veg",
-    description: "A mixed vegetable curry.",
+    description:
+      "A colorful blend of seasonal vegetables sautéed with Indian spices.",
     category: "Mains",
   },
   {
@@ -350,7 +389,7 @@ export const CateringMenuItems: MenuItem[] = [
     category: "Mains",
   },
   {
-    name: "Paneer Butter M.",
+    name: "Paneer Butter Masala",
     description: "Paneer cooked in a butter-based sauce.",
     category: "Mains",
   },
@@ -378,5 +417,66 @@ export const CateringMenuItems: MenuItem[] = [
     name: "Mushroom Mutter",
     description: "Mushrooms cooked with peas.",
     category: "Mains",
+  },
+  {
+    name: "Mushroom do Pyaza",
+    description: "Mushrooms cooked with onions.",
+    category: "Mains",
+  },
+  {
+    name: "Pav Bhaji",
+    description: "A spicy vegetable curry served with bread rolls.",
+    category: "Mains",
+  },
+  {
+    name: "Chana Kulcha",
+    description: "Indian bread filled with spiced chickpeas.",
+    category: "Mains",
+  },
+  {
+    name: "Stuffed Chana Kulcha",
+    description: "Indian bread filled with spiced chickpeas.",
+    category: "Mains",
+  },
+  {
+    name: "Tandoori Soya Chaap",
+    description: "Grilled marinated soy protein.",
+    category: "Mains",
+  },
+  {
+    name: "Tava Soya Chaap + Kulcha",
+    description: "Soya chaap cooked on a tava (griddle) served with kulcha.",
+    category: "Mains",
+  },
+  {
+    name: "Tava Soya Chaap + Lachha Paratha",
+    description: "Soya chaap cooked on a tava served with lachha paratha.",
+    category: "Mains",
+  },
+  {
+    name: "Soya Chaap Rolls",
+    description: "Soya chaap wrapped in roti.",
+    category: "Mains",
+  },
+  {
+    name: "Paneer Rolls",
+    description: "Paneer (Indian cheese) wrapped in roti.",
+    category: "Mains",
+  },
+  {
+    name: "Aloo Tikki Burger",
+    description: "A veggie burger made with potato patties.",
+    category: "Burgers",
+  },
+  {
+    name: "Noodle Burger",
+    description: "A unique burger made with noodles and the patty.",
+    category: "Burgers",
+  },
+  {
+    name: "Fully Loaded Burger",
+    description:
+      "A burger loaded with everything - noodles, paneer, and potato patty.",
+    category: "Burgers",
   },
 ];

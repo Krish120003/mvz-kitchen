@@ -139,8 +139,7 @@ export function Layout({ children }: LayoutProps) {
             <div>
               <h2 className="text-lg font-semibold">MV&apos;z Kitchen</h2>
               <p className="text-wrap text-neutral-300">
-                Serving flavour Indian food across the
-                Kitchener-Waterloo-Cambridge region.
+                Serving flavourful Indian food across the KWC region.
               </p>
             </div>
           </div>
