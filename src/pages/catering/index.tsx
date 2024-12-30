@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import { Layout } from "~/components/layout";
 
 import { CateringMenuItems } from "~/data/menu";
@@ -14,6 +15,10 @@ export default function Menu() {
     },
     {},
   );
+
+  const categories = [
+    ...new Set(CateringMenuItems.map((item) => item.category)),
+  ];
 
   return (
     <>
@@ -34,7 +39,7 @@ export default function Menu() {
       </Head>
       <Layout>
         <h1 className="text-2xl font-bold">Catering Menu</h1>
-        <p className="mt-4">
+        <div className="mt-4">
           Elevate your events with MV&apos;z Kitchen&apos;s exceptional Indian
           catering services. Our menu offers a diverse selection of traditional
           Indian dishes, snacks, and street food, all crafted with the freshest
@@ -50,7 +55,23 @@ export default function Menu() {
             <li>Take away orders</li>
             <li>Delivery</li>
           </ul>
-        </p>
+        </div>
+
+        <div className="mb-8 mt-8">
+          <h2 className="mb-2 text-lg font-bold">Browse Categories:</h2>
+          <div className="flex flex-wrap gap-2">
+            {categories.map((category) => (
+              <Link
+                key={category}
+                href={`/catering/${category.toLowerCase()}`}
+                className="rounded-full bg-orange-100 px-3 py-1 hover:bg-orange-200"
+              >
+                {category}
+              </Link>
+            ))}
+          </div>
+        </div>
+
         <div className="mt-8">
           <h2 className="text-lg font-extrabold">Contact Us</h2>
           <p className="mt-2">Phone: +1 (365) 378-0009</p>
