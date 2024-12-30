@@ -132,11 +132,18 @@ export function Layout({ children }: LayoutProps) {
       </main>
       <footer className="flex grid-cols-12 flex-col gap-16 bg-neutral-900 p-4 text-white md:grid md:p-16">
         <div className="col-span-2 md:col-span-4">
-          <h2 className="text-lg font-semibold">MV&apos;z Kitchen</h2>
-          <p className="text-neutral-300">
-            Serving flavour Indian food across the Kitchener-Waterloo-Cambridge
-            region.
-          </p>
+          <div className="flex items-end gap-2">
+            <div className="relative aspect-square h-16 w-16">
+              <Image src={"/logo.png"} alt={"MV'z Kitchen Logo"} fill />
+            </div>
+            <div>
+              <h2 className="text-lg font-semibold">MV&apos;z Kitchen</h2>
+              <p className="text-wrap text-neutral-300">
+                Serving flavour Indian food across the
+                Kitchener-Waterloo-Cambridge region.
+              </p>
+            </div>
+          </div>
 
           <ul className="mt-4 flex gap-4">
             {/* instagram, facebook, whatsapp */}
