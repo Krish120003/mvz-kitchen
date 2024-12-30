@@ -12,6 +12,18 @@ export default function Home() {
           MV&apos;z Kitchen | Best Indian Food in the
           Kitchener-Waterloo-Cambridge Region
         </title>
+        <meta
+          property="og:title"
+          content="MV'z Kitchen - Best Indian Food in KW Region"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="keywords"
+          content="Indian food, Kitchener, Waterloo, Cambridge, food truck, vegetarian, tandoori, indian restaurant, indian snacks"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/logo.png" />
+        <meta property="og:url" content="https://mvzkitchen.ca" />
         <meta name="description" content="" />
         <link rel="icon" href="/logo.png" />
       </Head>
