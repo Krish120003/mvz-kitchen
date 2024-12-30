@@ -1,29 +1,7 @@
 import Head from "next/head";
-import Link from "next/link";
-import { ArrowRight, Instagram, Facebook } from "lucide-react";
 
 import Image from "next/image";
 import { Layout } from "~/components/layout";
-
-export function Header() {
-  return (
-    <></>
-    // <header className="flex items-center justify-between p-4">
-    //   <div></div>
-    //   {/* <Image
-    //     src="/logo.png"
-    //     alt="MV'z Kitchen Logo"
-    //     width={100}
-    //     height={100}
-    //   ></Image> */}
-    //   <div className="flex gap-4 pr-8 text-xl font-bold">
-    //     <Link href="#">bunch</Link>
-    //     <Link href="#">of</Link>
-    //     <Link href="#">links</Link>
-    //   </div>
-    // </header>
-  );
-}
 
 export default function Home() {
   return (
@@ -31,8 +9,8 @@ export default function Home() {
       <Head>
         {/* TODO: UPDATE META TAGS */}
         <title>
-          MV'z Kitchen | Best Indian Food in the Kitchener-Waterloo-Cambridge
-          Region
+          MV&apos;z Kitchen | Best Indian Food in the
+          Kitchener-Waterloo-Cambridge Region
         </title>
         <meta name="description" content="" />
         <link rel="icon" href="/logo.png" />

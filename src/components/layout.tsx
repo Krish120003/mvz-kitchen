@@ -1,5 +1,5 @@
-import { ArrowRight, Instagram, Facebook } from "lucide-react";
 import clsx from "clsx";
+import { ArrowRight, Facebook, Instagram } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -20,10 +20,10 @@ export function Layout({ children }: LayoutProps) {
           <div className="flex flex-col gap-2 lg:min-h-screen">
             {/* invisible selectable text */}
 
-            <Link href={"/"}>
+            <Link href={"/"} className="">
               <h1>
                 <span className="select-none opacity-0" draggable={false}>
-                  MV'z Kitchen
+                  MV&apos;z Kitchenn
                 </span>
                 <Image
                   src="/logo_plain_orange.png"
@@ -43,13 +43,15 @@ export function Layout({ children }: LayoutProps) {
                 />
               </h1>
             </Link>
-            <ul className="grid select-none grid-cols-2 gap-2 p-4 font-bold lg:grid-cols-1 lg:gap-4 lg:pl-11 lg:text-2xl">
+            <ul className="grid select-none grid-cols-2 gap-2 pb-8 pt-4 font-bold underline lg:grid-cols-1 lg:gap-4 lg:pl-11 lg:text-2xl">
               <li>
                 <Link
                   href="/menu"
                   className={clsx(
                     "group flex items-center justify-between gap-2 hover:underline lg:justify-normal",
-                    activePage === "/menu" ? "text-orange-500" : "",
+                    activePage === "/menu"
+                      ? "text-orange-500 decoration-orange-500"
+                      : "",
                   )}
                   draggable="false"
                 >
@@ -130,7 +132,7 @@ export function Layout({ children }: LayoutProps) {
       </main>
       <footer className="flex grid-cols-12 flex-col gap-16 bg-neutral-900 p-4 text-white md:grid md:p-16">
         <div className="col-span-2 md:col-span-4">
-          <h2 className="text-lg font-semibold">MV'z Kitchen</h2>
+          <h2 className="text-lg font-semibold">MV&apos;z Kitchen</h2>
           <p className="text-neutral-300">
             Serving flavour Indian food across the Kitchener-Waterloo-Cambridge
             region.
@@ -221,7 +223,8 @@ export function Layout({ children }: LayoutProps) {
         </div>
 
         <p className="col-span-12 text-left opacity-50">
-          &copy; {new Date().getFullYear()} MV'z Kitchen. All Rights Reserved.
+          &copy; {new Date().getFullYear()} MV&apos;z Kitchen. All Rights
+          Reserved.
         </p>
       </footer>
     </>

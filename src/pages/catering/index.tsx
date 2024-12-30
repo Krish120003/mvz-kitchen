@@ -5,7 +5,7 @@ import { CateringMenuItems } from "~/data/menu";
 
 export default function Menu() {
   const itemsGroupedByCategory = CateringMenuItems.reduce(
-    (acc: { [key: string]: typeof CateringMenuItems }, item) => {
+    (acc: Record<string, typeof CateringMenuItems>, item) => {
       if (!acc[item.category]) {
         acc[item.category] = [];
       }
@@ -18,7 +18,7 @@ export default function Menu() {
   return (
     <>
       <Head>
-        <title>MV'z Kitchen | Indian Catering Menu</title>
+        <title>MV&apos;z Kitchen | Indian Catering Menu</title>
         <meta name="description" content="MV'z Kitchen Catering Services" />
         <link rel="icon" href="/logo.png" />
 
@@ -35,14 +35,21 @@ export default function Menu() {
       <Layout>
         <h1 className="text-2xl font-bold">Catering Menu</h1>
         <p className="mt-4">
-          Elevate your events with MV'z Kitchen's exceptional Indian catering
-          services. Our menu offers a diverse selection of traditional Indian
-          dishes, snacks, and street food, all crafted with the freshest
-          ingredients. Whether you're hosting a wedding, corporate event, or
-          private party, our catering service brings the authentic taste of
-          Indian cuisine to your special occasion. Let us make your event
-          memorable with the rich and vibrant flavors of India.
+          Elevate your events with MV&apos;z Kitchen&apos;s exceptional Indian
+          catering services. Our menu offers a diverse selection of traditional
+          Indian dishes, snacks, and street food, all crafted with the freshest
+          ingredients. Let us make your event memorable with the rich and
+          vibrant flavors of India.
           <br />
+          <br />
+          We cater for:
+          <ul className="ml-8 list-disc">
+            <li>Live Events</li>
+            <li>Corporate Events</li>
+            <li>Weddings</li>
+            <li>Take away orders</li>
+            <li>Delivery</li>
+          </ul>
         </p>
         <div className="mt-8">
           <h2 className="text-lg font-extrabold">Contact Us</h2>

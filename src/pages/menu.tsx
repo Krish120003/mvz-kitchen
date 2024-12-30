@@ -5,7 +5,7 @@ import { FoodTruckMenuItems } from "~/data/menu";
 
 export default function Menu() {
   const itemsGroupedByCategory = FoodTruckMenuItems.reduce(
-    (acc: { [key: string]: typeof FoodTruckMenuItems }, item) => {
+    (acc: Record<string, typeof FoodTruckMenuItems>, item) => {
       if (!acc[item.category]) {
         acc[item.category] = [];
       }
@@ -18,7 +18,7 @@ export default function Menu() {
   return (
     <>
       <Head>
-        <title>MV'z Kitchen | Indian Food Truck Menu</title>
+        <title>MV&apos;z Kitchen | Indian Food Truck Menu</title>
         <meta name="description" content="MV'z Kitchen Food Truck serves " />
         <link rel="icon" href="/logo.png" />
 
@@ -36,12 +36,12 @@ export default function Menu() {
         <h1 className="text-2xl font-bold">Food Truck Menu</h1>
         <p className="mt-4">
           Experience the best Indian food in the Kitchener-Waterloo-Cambridge
-          region with MV'z Kitchen. Our menu features a wide variety of
+          region with MV&apos;z Kitchen. Our menu features a wide variety of
           traditional Indian dishes, snacks, and street food, all prepared with
-          the freshest ingredients. Whether you're craving classic Indian
+          the freshest ingredients. Whether you&apos;re craving classic Indian
           curries, flavorful biryanis, or delicious Indian snacks, our food
-          truck brings the authentic taste of Indian restaurants to you. Join us
-          and indulge in the rich and vibrant flavors of India.
+          truck brings the authentic taste of Indian restaurant s to you. Join
+          us and indulge in the rich and vibrant flavors of India.
         </p>
         <hr className="my-8 border border-black" />
         <ol className="space-y-8">

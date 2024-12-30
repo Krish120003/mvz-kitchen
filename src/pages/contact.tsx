@@ -2,13 +2,12 @@ import Head from "next/head";
 import Link from "next/link";
 import { Layout } from "~/components/layout";
 import { Instagram, Facebook } from "lucide-react";
-import Image from "next/image";
 
 export default function Contact() {
   return (
     <>
       <Head>
-        <title>MV'z Kitchen | Contact Us</title>
+        <title>MV&apos;z Kitchen | Contact Us</title>
         <meta
           name="description"
           content="Contact MV'z Kitchen food truck in Kitchener-Waterloo-Cambridge. Call, message, or visit us for authentic Indian street food experience."
@@ -36,9 +35,9 @@ export default function Contact() {
           <h1 className="text-2xl font-bold">Contact Us</h1>
 
           <p className="text-lg">
-            We're always happy to hear from our customers! Feel free to reach
-            out through any of the following channels. For quick responses,
-            WhatsApp is our preferred method of communication.
+            We&apos;re always happy to hear from our customers! Feel free to
+            reach out through any of the following channels. For quick
+            responses, WhatsApp is our preferred method of communication.
           </p>
 
           <div className="grid gap-8 md:grid-cols-2">
