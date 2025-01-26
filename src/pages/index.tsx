@@ -28,11 +28,20 @@ export default function Home() {
         <link rel="icon" href="/logo.png" />
       </Head>
       <Layout>
+        <div className="relative mb-8 h-48 scale-110 overflow-hidden object-cover md:hidden">
+          <Image
+            src="/hero.jpeg"
+            alt="A group of customers outside the MV'z Kitchen Food Truck in Kitchener, Ontario"
+            className="object-cover"
+            fill
+          />
+        </div>
         <Image
           src="/HeroCropped.png"
           alt="A group of customers outside the MV'z Kitchen Food Truck in Kitchener, Ontario"
           width={2402}
           height={1407}
+          className="hidden w-full md:block"
         />
 
         <p className="font-bold md:text-2xl">
@@ -45,28 +54,18 @@ export default function Home() {
           <div>
             <h2 className="text-lg font-extrabold">Hours</h2>
             <br />
-            <div className="grid grid-cols-2">
-              <p className="contents">
+            <div className="grid grid-cols-1 gap-2">
+              <p className="grid grid-cols-2 border-b border-black">
                 <span className="font-bold">Mon, Tues</span> Closed
               </p>
-              {/* <p className="contents">
-                <span className="font-bold">Tues</span> Closed
-              </p> */}
-              <p className="contents">
+
+              <p className="grid grid-cols-2 border-b border-black">
                 <span className="font-bold">Wed - Fri</span> 3 PM to 9 PM
               </p>
-              {/*<p className="contents">
-                 <span className="font-bold">Thurs</span> 3 PM to 9 PM
-              </p>
-              <p className="contents">
-                <span className="font-bold">Fri</span> 3 PM to 9 PM
-              </p> */}
-              <p className="contents">
+
+              <p className="grid grid-cols-2 border-b border-black">
                 <span className="font-bold">Sat, Sun</span> 1 PM to 9 PM
               </p>
-              {/* <p className="contents">
-                <span className="font-bold">Sun</span> 1 PM to 9 PM
-              </p> */}
             </div>
           </div>
           <div>

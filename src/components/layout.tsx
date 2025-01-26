@@ -15,7 +15,7 @@ export function Layout({ children }: LayoutProps) {
 
   return (
     <>
-      <main className="min-h-screen bg-[#f5ede4] p-4 md:px-8">
+      <main className="min-h-screen bg-[#ffffff] p-4 md:px-8">
         <section className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-3 lg:gap-8">
           <div className="flex flex-col gap-2 lg:min-h-screen">
             {/* invisible selectable text */}
@@ -33,6 +33,7 @@ export function Layout({ children }: LayoutProps) {
                   draggable="false"
                   className="hidden h-32 lg:block lg:h-auto lg:w-full lg:pt-32"
                 />
+                {/*
                 <Image
                   src="/wider.png"
                   alt="MV'z Kitchen written in orange as text"
@@ -40,91 +41,105 @@ export function Layout({ children }: LayoutProps) {
                   height={1024}
                   draggable="false"
                   className="-mb-12 -mt-8 w-full lg:hidden"
-                />
+                /> */}
               </h1>
             </Link>
-            <ul className="grid select-none grid-cols-2 gap-2 pb-8 pt-4 font-bold underline lg:grid-cols-1 lg:gap-4 lg:pl-11 lg:text-2xl">
-              <li>
-                <Link
-                  href="/menu"
-                  className={clsx(
-                    "group flex items-center justify-between gap-2 hover:underline lg:justify-normal",
-                    activePage === "/menu"
-                      ? "text-orange-500 decoration-orange-500"
-                      : "",
-                  )}
-                  draggable="false"
-                >
-                  Menu{" "}
-                  <ArrowRight className="transition-all group-hover:-rotate-45" />
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/catering"
-                  className={clsx(
-                    "group flex items-center justify-between gap-2 hover:underline lg:justify-normal",
-                    activePage === "/catering" ? "text-orange-500" : "",
-                  )}
-                  draggable="false"
-                >
-                  Catering{" "}
-                  <ArrowRight className="transition-all group-hover:-rotate-45" />
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contact"
-                  className={clsx(
-                    "group flex items-center justify-between gap-2 hover:underline lg:justify-normal",
-                    activePage === "/contact" ? "text-orange-500" : "",
-                  )}
-                  draggable="false"
-                >
-                  Contact{" "}
-                  <ArrowRight className="transition-all group-hover:-rotate-45" />
-                </Link>
-              </li>
-              <li>
-                <a
-                  href="https://www.instagram.com/mvzkitchen/"
-                  target="_blank"
-                  className="group flex items-center justify-between gap-2 hover:underline lg:justify-normal"
-                  draggable="false"
-                >
-                  Instagram{" "}
-                  <Instagram className="transition-all group-hover:-rotate-6" />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.facebook.com/people/Mvz-Kitchen/pfbid02j42XzQQ3n1bCXXr14YsP7XuQ7rgp9aYDXX76P1XM6fn1zLk4jmSjtt3R8TkXWj25l/?mibextid=LQQJ4d"
-                  target="_blank"
-                  className="group flex items-center justify-between gap-2 hover:underline lg:justify-normal"
-                  draggable="false"
-                >
-                  Facebook{" "}
-                  <Facebook className="transition-all group-hover:-rotate-6" />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://wa.me/13653780009"
-                  target="_blank"
-                  className="group flex items-center justify-between gap-2 hover:underline lg:justify-normal"
-                  draggable="false"
-                >
-                  WhatsApp{" "}
-                  <Image
-                    src="/whatsapp_black.svg"
-                    alt="WhatsApp"
-                    width={24}
-                    height={24}
-                    className="text-black transition-all group-hover:-rotate-6"
-                  />
-                </a>
-              </li>
-            </ul>
+
+            <div className="mb-8 grid grid-cols-2">
+              <Link href={"/"} className="lg:hidden">
+                <Image
+                  className="h-32 w-32"
+                  width={1024}
+                  height={1024}
+                  src={"/logo.png"}
+                  alt={""}
+                />
+              </Link>
+              <ul className="grid select-none grid-cols-1 gap-2 pb-8 pr-4 pt-4 text-xl font-bold underline lg:grid-cols-1 lg:gap-4 lg:pl-11 lg:text-2xl">
+                <li>
+                  <Link
+                    href="/menu"
+                    className={clsx(
+                      "group flex w-full items-center justify-end gap-2 hover:underline lg:justify-normal",
+                      activePage === "/menu"
+                        ? "text-orange-500 decoration-orange-500"
+                        : "",
+                    )}
+                    draggable="false"
+                  >
+                    Menu{" "}
+                    {/* <ArrowRight className="transition-all group-hover:-rotate-45" /> */}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/catering"
+                    className={clsx(
+                      "group flex w-full items-center justify-end gap-2 hover:underline lg:justify-normal",
+                      activePage === "/catering" ? "text-orange-500" : "",
+                    )}
+                    draggable="false"
+                  >
+                    Catering{" "}
+                    {/* <ArrowRight className="transition-all group-hover:-rotate-45" /> */}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/contact"
+                    className={clsx(
+                      "group flex w-full items-center justify-end gap-2 hover:underline lg:justify-normal",
+                      activePage === "/contact" ? "text-orange-500" : "",
+                    )}
+                    draggable="false"
+                  >
+                    Contact{" "}
+                    {/* <ArrowRight className="transition-all group-hover:-rotate-45" /> */}
+                  </Link>
+                </li>
+                <div className="hidden lg:contents">
+                  <li>
+                    <a
+                      href="https://www.instagram.com/mvzkitchen/"
+                      target="_blank"
+                      className="group flex items-center justify-end gap-2 hover:underline lg:justify-normal"
+                      draggable="false"
+                    >
+                      Instagram{" "}
+                      {/* <Instagram className="transition-all group-hover:-rotate-6" /> */}
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.facebook.com/people/Mvz-Kitchen/pfbid02j42XzQQ3n1bCXXr14YsP7XuQ7rgp9aYDXX76P1XM6fn1zLk4jmSjtt3R8TkXWj25l/?mibextid=LQQJ4d"
+                      target="_blank"
+                      className="group flex items-center justify-end gap-2 hover:underline lg:justify-normal"
+                      draggable="false"
+                    >
+                      Facebook{" "}
+                      {/* <Facebook className="transition-all group-hover:-rotate-6" /> */}
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://wa.me/13653780009"
+                      target="_blank"
+                      className="group flex items-center justify-end gap-2 hover:underline lg:justify-normal"
+                      draggable="false"
+                    >
+                      WhatsApp{" "}
+                      {/* <Image
+                        src="/whatsapp_black.svg"
+                        alt="WhatsApp"
+                        width={24}
+                        height={24}
+                        className="text-black transition-all group-hover:-rotate-6"
+                      /> */}
+                    </a>
+                  </li>
+                </div>
+              </ul>
+            </div>
           </div>
 
           <div className="md:py-8 lg:col-span-2">{children}</div>
