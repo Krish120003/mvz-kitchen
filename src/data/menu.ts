@@ -12,6 +12,17 @@ export const FoodTruckMenuItems: MenuItem[] = [
     category: "Snacks",
   },
   {
+    name: "Aloo Tikki Burger",
+    description: "A burger loaded with potato patties, paneer and veggies.",
+    category: "Main Course",
+  },
+  {
+    name: "Noodle Burger",
+    description:
+      "A Indo-Chinese burger loaded with noodles, potato patty and veggies.",
+    category: "Main Course",
+  },
+  {
     name: "Dahi Puri",
     description:
       "Hollow puri filled with a mixture of potatoes, chickpeas, and yogurt.",
@@ -20,7 +31,7 @@ export const FoodTruckMenuItems: MenuItem[] = [
   {
     name: "Dahi Bhalla",
     description:
-      "Fried lentil balls soaked in yogurt, sweet chutney, and spices.",
+      "Fried lentil balls soaked in yogurt, topped with sweet chutney and spices.",
     category: "Snacks",
   },
   {
@@ -36,15 +47,15 @@ export const FoodTruckMenuItems: MenuItem[] = [
     category: "Snacks",
   },
   {
-    name: "Noodle Burger",
-    description:
-      "A Indo-Chinese burger loaded with noodles, potato patty and veggies.",
-    category: "Main Course",
-  },
-  {
     name: "Tandoori Soya Chaap",
     description:
       "Grilled marinated soy protein, a popular vegetarian alternative to meat.",
+    category: "Main Course",
+  },
+  {
+    name: "Tava Chaap Kulcha",
+    description:
+      "Tandoori marinated soy protein and gravy and served with soft Indian kulcha bread.",
     category: "Main Course",
   },
   {
@@ -55,17 +66,6 @@ export const FoodTruckMenuItems: MenuItem[] = [
   {
     name: "Chana Kulcha",
     description: "A plain Indian bread served with a side of spiced chickpeas.",
-    category: "Main Course",
-  },
-  {
-    name: "Chaap Kulcha",
-    description:
-      "Tandoori marinated soy protein and gravy and served with soft Indian kulcha bread.",
-    category: "Main Course",
-  },
-  {
-    name: "Aloo Tikki Burger",
-    description: "A burger loaded with potato patties, paneer and veggies.",
     category: "Main Course",
   },
   {
@@ -84,8 +84,8 @@ export const FoodTruckMenuItems: MenuItem[] = [
     category: "Main Course",
   },
   {
-    name: "Stuffed Parantha (Naan)",
-    description: "A stuffed Indian flatbread served with butter and yogurt.",
+    name: "Dal Makhani with Stuffed Paratha",
+    description: "Creamy lentils served with a potato-stuffed Indian bread.",
     category: "Main Course",
   },
   {
@@ -147,13 +147,13 @@ export const CateringMenuItems: MenuItem[] = [
   {
     name: "Dahi Bhalla",
     description:
-      "Fried lentil balls soaked in yogurt, sweet chutney, and spices.",
+      "Fried lentil balls soaked in yogurt, topped with sweet chutney and spices.",
     category: "Appetizers",
   },
   {
     name: "Chat Papdi",
     description:
-      "A crispy, savory snack made with puffed puri, potatoes, chickpeas, and chutneys.",
+      "A crispy, savory snack made with puffed puri, potatoes, chickpeas, topped with yogurt and chutneys.",
     category: "Appetizers",
   },
   {
@@ -176,7 +176,7 @@ export const CateringMenuItems: MenuItem[] = [
   {
     name: "Desi Ghee Tava Aloo Tikki",
     description:
-      "Crispy potato patties cooked in clarified butter served with sweet chutney, fresh yogurt, pomogranate, and spices.",
+      "Crispy potato patties cooked in clarified butter served with sweet chutney, fresh yogurt, cruncy red onions, radish,  pomogranate, and spices.",
     category: "Appetizers",
   },
   {
@@ -256,11 +256,11 @@ export const CateringMenuItems: MenuItem[] = [
     description: "Plain Indian flatbread.",
     category: "Paranthas",
   },
-  {
-    name: "Stuffed Parantha",
-    description: "Stuffed Indian flatbread.",
-    category: "Paranthas",
-  },
+  // {
+  //   name: "Stuffed Parantha",
+  //   description: "Stuffed Indian flatbread.",
+  //   category: "Paranthas",
+  // },
   {
     name: "Aloo Parantha",
     description: "Indian bread stuffed with spiced potatoes.",
@@ -276,19 +276,19 @@ export const CateringMenuItems: MenuItem[] = [
     description: "Indian bread stuffed with spiced paneer.",
     category: "Paranthas",
   },
-  {
-    name: "Methi Parantha",
-    description: "Indian bread stuffed with fenugreek leaves.",
-    category: "Paranthas",
-  },
-  {
-    name: "Mooli Parantha",
-    description: "Indian bread stuffed with radish.",
-    category: "Paranthas",
-  },
+  // {
+  //   name: "Mooli Parantha",
+  //   description: "Indian bread stuffed with radish.",
+  //   category: "Paranthas",
+  // },
   {
     name: "Lachha Parantha",
     description: "Layered Indian bread.",
+    category: "Paranthas",
+  },
+  {
+    name: "Missi Roti",
+    description: "Indian bread made with gram flour.",
     category: "Paranthas",
   },
   {
@@ -390,7 +390,7 @@ export const CateringMenuItems: MenuItem[] = [
   },
   {
     name: "Paneer Butter Masala",
-    description: "Paneer cooked in a butter-based sauce.",
+    description: "Paneer cooked in a buttery tomato-based sauce.",
     category: "Mains",
   },
   {
@@ -430,7 +430,7 @@ export const CateringMenuItems: MenuItem[] = [
   },
   {
     name: "Chana Kulcha",
-    description: "Indian bread filled with spiced chickpeas.",
+    description: "Indian bread served with spiced chickpeas.",
     category: "Mains",
   },
   {
@@ -445,22 +445,25 @@ export const CateringMenuItems: MenuItem[] = [
   },
   {
     name: "Tava Soya Chaap + Kulcha",
-    description: "Soya chaap cooked on a tava (griddle) served with kulcha.",
+    description:
+      "Soya chaap gravy cooked on a tava (griddle) served with kulcha.",
     category: "Mains",
   },
   {
     name: "Tava Soya Chaap + Lachha Paratha",
-    description: "Soya chaap cooked on a tava served with lachha paratha.",
+    description:
+      "Soya chaap gravy cooked on a tava served with lachha paratha.",
     category: "Mains",
   },
   {
     name: "Soya Chaap Rolls",
-    description: "Soya chaap wrapped in roti.",
+    description: "Soya chaap wrapped in roti with onions and peppers.",
     category: "Mains",
   },
   {
     name: "Paneer Rolls",
-    description: "Paneer (Indian cheese) wrapped in roti.",
+    description:
+      "Paneer (Indian cheese) wrapped in roti with onions and peppers.",
     category: "Mains",
   },
   {
