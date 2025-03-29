@@ -89,11 +89,11 @@ export default function Contact() {
               <h2 className="mb-4 text-xl font-bold">Hours</h2>
               <div className="grid grid-cols-2 gap-2">
                 <p className="contents">
-                  <span className="font-bold">Mon, Tues</span> Closed
+                  <span className="font-bold">Mon - Fri</span> Closed
                 </p>
-                <p className="contents">
+                {/* <p className="contents">
                   <span className="font-bold">Wed - Fri</span> 3 PM to 9 PM
-                </p>
+                </p> */}
                 <p className="contents">
                   <span className="font-bold">Sat, Sun</span> 1 PM to 9 PM
                 </p>

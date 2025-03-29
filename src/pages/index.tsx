@@ -56,12 +56,12 @@ export default function Home() {
             <br />
             <div className="grid grid-cols-1 gap-2">
               <p className="grid grid-cols-2 border-b border-black">
-                <span className="font-bold">Mon, Tues</span> Closed
+                <span className="font-bold">Mon - Fri</span> Closed
               </p>
 
-              <p className="grid grid-cols-2 border-b border-black">
+              {/* <p className="grid grid-cols-2 border-b border-black">
                 <span className="font-bold">Wed - Fri</span> 3 PM to 9 PM
-              </p>
+              </p> */}
 
               <p className="grid grid-cols-2 border-b border-black">
                 <span className="font-bold">Sat, Sun</span> 1 PM to 9 PM
