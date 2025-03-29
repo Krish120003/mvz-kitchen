@@ -95,7 +95,7 @@ export default function Contact() {
                   <span className="font-bold">Wed - Fri</span> 3 PM to 9 PM
                 </p> */}
                 <p className="contents">
-                  <span className="font-bold">Sat, Sun</span> 1 PM to 9 PM
+                  <span className="font-bold">Sat, Sun</span> 3 PM to 9 PM
                 </p>
               </div>
             </div>

@@ -86,7 +86,7 @@ export default function Home() {
               </p> */}
 
               <p className="grid grid-cols-2 border-b border-black">
-                <span className="font-bold">Sat, Sun</span> 1 PM to 9 PM
+                <span className="font-bold">Sat, Sun</span> 3 PM to 9 PM
               </p>
             </div>
           </div>
