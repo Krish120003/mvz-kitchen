@@ -1,6 +1,6 @@
-import Head from "next/head";
 import Link from "next/link";
 import { Layout } from "~/components/layout";
+import { SEO } from "~/components/seo";
 import { CateringMenuItems } from "~/data/menu";
 
 export default function CategoryPage() {
@@ -11,39 +11,12 @@ export default function CategoryPage() {
 
   return (
     <>
-      <Head>
-        <title>Indian Main Courses | MV&apos;z Kitchen Catering</title>
-        <meta
-          name="description"
-          content="Authentic Indian main courses for catering - from rich curries to biryanis. Perfect for your next event in Brampton."
-        />
-        <link rel="icon" href="/logo.png" />
-
-        <meta
-          property="og:title"
-          content="Indian Main Courses | MV'z Kitchen Catering"
-        />
-        <meta
-          property="og:description"
-          content="Explore our selection of authentic Indian main courses for your next catered event."
-        />
-        <meta property="og:image" content="/logo.png" />
-        <meta
-          property="og:url"
-          content="https://mvzkitchen.com/catering/mains"
-        />
-
-        <meta
-          name="twitter:title"
-          content="Indian Main Courses | MV'z Kitchen Catering"
-        />
-        <meta
-          name="twitter:description"
-          content="Authentic Indian main courses for catering in KW region"
-        />
-        <meta name="twitter:image" content="/logo.png" />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Head>
+      <SEO
+        title="Indian Main Courses | Catering"
+        description="Authentic vegetarian Indian main courses for catering events. Flavorful curries, dal, and vegetable dishes for weddings, corporate events, and parties in Brampton."
+        keywords="Indian main courses, vegetarian curry, paneer dishes, dal, vegetarian Indian food, catering mains, Brampton catering"
+        noIndex={true}
+      />
       <Layout>
         <div className="mb-8">
           <Link href="/catering" className="text-orange-500 hover:underline">
@@ -54,11 +27,10 @@ export default function CategoryPage() {
         <h1 className="mb-4 text-2xl font-bold">Indian Main Courses</h1>
 
         <p className="mb-8 mt-4">
-          Complete your event menu with our exquisite selection of Indian main
-          courses. From aromatic biryanis to rich curries, our dishes are
-          perfect for corporate events, weddings, and private parties in the
-          Brampton region. Each dish is prepared with authentic spices and
-          premium ingredients.
+          Our main course selection features authentic vegetarian Indian dishes
+          prepared with traditional recipes and the freshest ingredients. From
+          rich and creamy paneer dishes to flavorful vegetable curries, these
+          entrées will be the highlight of your catered event.
         </p>
 
         <div className="mb-8">

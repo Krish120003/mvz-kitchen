@@ -1,6 +1,6 @@
-import Head from "next/head";
 import Link from "next/link";
 import { Layout } from "~/components/layout";
+import { SEO } from "~/components/seo";
 import { CateringMenuItems } from "~/data/menu";
 
 export default function CategoryPage() {
@@ -13,37 +13,12 @@ export default function CategoryPage() {
 
   return (
     <>
-      <Head>
-        <title>Indian Paranthas & Breads | MV&apos;z Kitchen Catering</title>
-        <meta
-          name="description"
-          content="Fresh, handmade Indian paranthas and breads for catering. Traditional and stuffed varieties available for events in Brampton."
-        />
-        <link rel="icon" href="/logo.png" />
-        <meta
-          property="og:title"
-          content="Indian Paranthas & Breads | MV'z Kitchen Catering"
-        />
-        <meta
-          property="og:description"
-          content="Fresh Indian breads and stuffed paranthas for your catered events"
-        />
-        <meta property="og:image" content="/logo.png" />
-        <meta
-          property="og:url"
-          content="https://mvzkitchen.com/catering/paranthas"
-        />
-        <meta
-          name="twitter:title"
-          content="Indian Paranthas & Breads | MV'z Kitchen Catering"
-        />
-        <meta
-          name="twitter:description"
-          content="Fresh Indian breads for catering in KW region"
-        />
-        <meta name="twitter:image" content="/logo.png" />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Head>
+      <SEO
+        title="Indian Paranthas & Breads | Catering"
+        description="Fresh, handmade Indian paranthas and breads for catering. Traditional and stuffed varieties available for events in Brampton and surrounding areas."
+        keywords="Indian paranthas, stuffed paranthas, Indian breads, naan, roti, catering bread, vegetarian catering, Brampton"
+        noIndex={true}
+      />
       <Layout>
         <div className="mb-8">
           <Link href="/catering" className="text-orange-500 hover:underline">

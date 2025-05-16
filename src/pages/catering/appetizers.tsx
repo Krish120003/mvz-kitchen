@@ -1,6 +1,6 @@
-import Head from "next/head";
 import Link from "next/link";
 import { Layout } from "~/components/layout";
+import { SEO } from "~/components/seo";
 import { CateringMenuItems } from "~/data/menu";
 
 export default function CategoryPage() {
@@ -13,39 +13,12 @@ export default function CategoryPage() {
 
   return (
     <>
-      <Head>
-        <title>Indian Appetizers & Starters | MV&apos;z Kitchen Catering</title>
-        <meta
-          name="description"
-          content="Discover our delicious Indian appetizers for catering - from classic Samosas to Chat Papri. Perfect starters for your next event in Brampton."
-        />
-        <link rel="icon" href="/logo.png" />
-
-        <meta
-          property="og:title"
-          content="Indian Appetizers & Starters | MV'z Kitchen Catering"
-        />
-        <meta
-          property="og:description"
-          content="Explore our selection of authentic Indian appetizers and starters for your next catered event."
-        />
-        <meta property="og:image" content="/logo.png" />
-        <meta
-          property="og:url"
-          content="https://mvzkitchen.com/catering/appetizers"
-        />
-
-        <meta
-          name="twitter:title"
-          content="Indian Appetizers & Starters | MV'z Kitchen Catering"
-        />
-        <meta
-          name="twitter:description"
-          content="Authentic Indian appetizers for catering in KW region"
-        />
-        <meta name="twitter:image" content="/logo.png" />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Head>
+      <SEO
+        title="Indian Appetizers & Starters | Catering"
+        description="Delicious vegetarian Indian appetizers and starters for catering events. Traditional chaats, samosas, and more for parties and events in Brampton and surrounding areas."
+        keywords="Indian appetizers, vegetarian starters, Indian party food, chaats, samosas, pakoras, catering appetizers, Brampton"
+        noIndex={true}
+      />
       <Layout>
         <div className="mb-8">
           <Link href="/catering" className="text-orange-500 hover:underline">
@@ -58,10 +31,10 @@ export default function CategoryPage() {
         </h1>
 
         <p className="mb-8 mt-4">
-          Start your event with our delicious selection of authentic Indian
-          appetizers. Perfect for corporate events, weddings, and private
-          parties in the Brampton region. Each appetizer is freshly prepared
-          with authentic spices and ingredients.
+          Start your event with our exceptional Indian appetizers. From our
+          signature chaats to traditional samosas and pakoras, these
+          crowd-pleasing starters are perfect for cocktail parties, corporate
+          events, and wedding receptions.
         </p>
 
         <div className="mb-8">

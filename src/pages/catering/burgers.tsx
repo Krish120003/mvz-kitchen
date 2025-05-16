@@ -1,6 +1,6 @@
-import Head from "next/head";
 import Link from "next/link";
 import { Layout } from "~/components/layout";
+import { SEO } from "~/components/seo";
 import { CateringMenuItems } from "~/data/menu";
 
 export default function CategoryPage() {
@@ -13,37 +13,12 @@ export default function CategoryPage() {
 
   return (
     <>
-      <Head>
-        <title>Indian Fusion Burgers | MV&apos;z Kitchen Catering</title>
-        <meta
-          name="description"
-          content="Unique Indian fusion burgers for catering events. Spice-infused patties and innovative toppings perfect for corporate events and parties in Brampton."
-        />
-        <link rel="icon" href="/logo.png" />
-        <meta
-          property="og:title"
-          content="Indian Fusion Burgers | MV'z Kitchen Catering"
-        />
-        <meta
-          property="og:description"
-          content="Discover our unique Indian fusion burgers for your next catered event"
-        />
-        <meta property="og:image" content="/logo.png" />
-        <meta
-          property="og:url"
-          content="https://mvzkitchen.com/catering/burgers"
-        />
-        <meta
-          name="twitter:title"
-          content="Indian Fusion Burgers | MV'z Kitchen Catering"
-        />
-        <meta
-          name="twitter:description"
-          content="Unique Indian fusion burgers for catering in Brampton region"
-        />
-        <meta name="twitter:image" content="/logo.png" />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Head>
+      <SEO
+        title="Vegetarian Indian Burgers | Catering"
+        description="Unique vegetarian Indian-inspired burgers for catering events. Fusion dishes combining traditional Indian flavors with modern presentation for parties and events in Brampton."
+        keywords="vegetarian Indian burgers, fusion food, party catering, Indian fusion, tikki burger, samosa burger, Brampton catering"
+        noIndex={true}
+      />
       <Layout>
         <div className="mb-8">
           <Link href="/catering" className="text-orange-500 hover:underline">
@@ -51,14 +26,14 @@ export default function CategoryPage() {
           </Link>
         </div>
 
-        <h1 className="mb-4 text-2xl font-bold">Indian Fusion Burgers</h1>
+        <h1 className="mb-4 text-2xl font-bold">Indian-Inspired Burgers</h1>
 
         <p className="mb-8 mt-4">
-          Add a unique twist to your event with our Indian fusion burgers. Each
-          burger combines classic Western comfort food with authentic Indian
-          spices and flavors. Perfect for corporate lunches, casual events, and
-          parties that want something different. Available for catering across
-          the Brampton region.
+          Add something unique to your event with our Indian-inspired vegetarian
+          burgers. These fusion creations combine traditional Indian flavors
+          with modern presentation, perfect for casual events, office parties,
+          and gatherings where you want to offer something different yet
+          familiar.
         </p>
 
         <div className="mb-8">

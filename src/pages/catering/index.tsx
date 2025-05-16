@@ -1,7 +1,6 @@
-import Head from "next/head";
 import Link from "next/link";
 import { Layout } from "~/components/layout";
-
+import { SEO } from "~/components/seo";
 import { CateringMenuItems } from "~/data/menu";
 
 export default function Menu() {
@@ -22,25 +21,16 @@ export default function Menu() {
 
   return (
     <>
-      <Head>
-        <title>MV&apos;z Kitchen | Indian Catering Menu</title>
-        <meta name="description" content="MV'z Kitchen Catering Services" />
-        <link rel="icon" href="/logo.png" />
-
-        <meta property="og:title" content="MV'z Kitchen | Catering Menu" />
-        <meta property="og:description" content="MV'z Kitchen Catering Menu" />
-        <meta property="og:image" content="/logo.png" />
-        <meta property="og:url" content="https://mvzkitchen.com/catering" />
-
-        <meta name="twitter:title" content="MV'z Kitchen | Catering Menu" />
-        <meta name="twitter:description" content="MV'z Kitchen Catering Menu" />
-        <meta name="twitter:image" content="/logo.png" />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Head>
+      <SEO
+        title="Indian Catering Services in Brampton"
+        description="MVZ Kitchen offers exceptional vegetarian Indian catering services for corporate events, weddings, and private parties. Serving authentic Indian cuisine in Brampton and surrounding areas."
+        keywords="Indian catering Brampton, vegetarian catering, Indian food catering, corporate catering, wedding catering, Indian event food"
+        noIndex={true}
+      />
       <Layout>
         <h1 className="text-2xl font-bold">Catering Menu</h1>
         <div className="mt-4">
-          Elevate your events with MV&apos;z Kitchen&apos;s exceptional Indian
+          Elevate your events with MVZ Kitchen&apos;s exceptional Indian
           catering services. Our menu offers a diverse selection of traditional
           Indian dishes, snacks, and street food, all crafted with the freshest
           ingredients. Let us make your event memorable with the rich and

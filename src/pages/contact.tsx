@@ -1,35 +1,16 @@
-import Head from "next/head";
 import Link from "next/link";
 import { Layout } from "~/components/layout";
+import { SEO } from "~/components/seo";
 import { Instagram, Facebook } from "lucide-react";
 
 export default function Contact() {
   return (
     <>
-      <Head>
-        <title>MV&apos;z Kitchen | Contact Us</title>
-        <meta
-          name="description"
-          content="Contact MV'z Kitchen restaurant in Brampton. Call, message, or visit us for authentic Indian street food experience."
-        />
-        <link rel="icon" href="/logo.png" />
-
-        <meta property="og:title" content="MV'z Kitchen | Contact Us" />
-        <meta
-          property="og:description"
-          content="Contact MV'z Kitchen restaurant in Brampton for authentic Indian street food"
-        />
-        <meta property="og:image" content="/logo.png" />
-        <meta property="og:url" content="https://mvzkitchen.com/contact" />
-
-        <meta name="twitter:title" content="MV'z Kitchen | Contact Us" />
-        <meta
-          name="twitter:description"
-          content="Contact MV'z Kitchen restaurant in Brampton for authentic Indian street food"
-        />
-        <meta name="twitter:image" content="/logo.png" />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Head>
+      <SEO
+        title="Contact Us"
+        description="Contact MVZ Kitchen restaurant in Brampton. Call, message, or visit us for authentic vegetarian Indian food experience."
+        keywords="contact MVZ Kitchen, Indian restaurant Brampton, vegetarian restaurant contact, Indian food Brampton"
+      />
       <Layout>
         <div className="grid gap-8">
           <h1 className="text-2xl font-bold">Contact Us</h1>

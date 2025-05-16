@@ -73,19 +73,6 @@ export function Layout({ children }: LayoutProps) {
                 </li>
                 <li>
                   <Link
-                    href="/catering"
-                    className={clsx(
-                      "group flex w-full items-center justify-end gap-2 hover:underline lg:justify-normal",
-                      activePage === "/catering" ? "text-orange-500" : "",
-                    )}
-                    draggable="false"
-                  >
-                    Catering{" "}
-                    {/* <ArrowRight className="transition-all group-hover:-rotate-45" /> */}
-                  </Link>
-                </li>
-                <li>
-                  <Link
                     href="/contact"
                     className={clsx(
                       "group flex w-full items-center justify-end gap-2 hover:underline lg:justify-normal",
@@ -228,11 +215,6 @@ export function Layout({ children }: LayoutProps) {
             <li>
               <Link href="/menu" className="hover:underline">
                 Menu
-              </Link>
-            </li>
-            <li>
-              <Link href="/catering" className="hover:underline">
-                Catering
               </Link>
             </li>
             <li>

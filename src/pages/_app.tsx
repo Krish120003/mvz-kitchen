@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { Router } from "next/router";
 import posthog from "posthog-js";
 import { PostHogProvider } from "posthog-js/react";
+import Head from "next/head";
 
 import "~/styles/globals.css";
 
@@ -32,6 +33,14 @@ const MyApp: AppType = ({ Component, pageProps }) => {
 
   return (
     <PostHogProvider client={posthog}>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="google-site-verification"
+          content="YOUR_VERIFICATION_CODE"
+        />
+        <link rel="icon" href="/logo.png" />
+      </Head>
       <div className={GeistSans.className}>
         <Component {...pageProps} />
       </div>
