@@ -17,7 +17,7 @@ export default function CategoryPage() {
         <title>Indian Fusion Burgers | MV&apos;z Kitchen Catering</title>
         <meta
           name="description"
-          content="Unique Indian fusion burgers for catering events. Spice-infused patties and innovative toppings perfect for corporate events and parties in Kitchener-Waterloo region."
+          content="Unique Indian fusion burgers for catering events. Spice-infused patties and innovative toppings perfect for corporate events and parties in Brampton."
         />
         <link rel="icon" href="/logo.png" />
         <meta
@@ -39,7 +39,7 @@ export default function CategoryPage() {
         />
         <meta
           name="twitter:description"
-          content="Unique Indian fusion burgers for catering in KW region"
+          content="Unique Indian fusion burgers for catering in Brampton region"
         />
         <meta name="twitter:image" content="/logo.png" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -58,7 +58,7 @@ export default function CategoryPage() {
           burger combines classic Western comfort food with authentic Indian
           spices and flavors. Perfect for corporate lunches, casual events, and
           parties that want something different. Available for catering across
-          the Kitchener-Waterloo-Cambridge region.
+          the Brampton region.
         </p>
 
         <div className="mb-8">

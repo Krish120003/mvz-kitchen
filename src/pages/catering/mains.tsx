@@ -15,7 +15,7 @@ export default function CategoryPage() {
         <title>Indian Main Courses | MV&apos;z Kitchen Catering</title>
         <meta
           name="description"
-          content="Authentic Indian main courses for catering - from rich curries to biryanis. Perfect for your next event in Kitchener-Waterloo region."
+          content="Authentic Indian main courses for catering - from rich curries to biryanis. Perfect for your next event in Brampton."
         />
         <link rel="icon" href="/logo.png" />
 
@@ -57,8 +57,8 @@ export default function CategoryPage() {
           Complete your event menu with our exquisite selection of Indian main
           courses. From aromatic biryanis to rich curries, our dishes are
           perfect for corporate events, weddings, and private parties in the
-          Kitchener-Waterloo-Cambridge region. Each dish is prepared with
-          authentic spices and premium ingredients.
+          Brampton region. Each dish is prepared with authentic spices and
+          premium ingredients.
         </p>
 
         <div className="mb-8">

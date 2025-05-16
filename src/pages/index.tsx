@@ -9,17 +9,16 @@ export default function Home() {
       <Head>
         {/* TODO: UPDATE META TAGS */}
         <title>
-          MV&apos;z Kitchen | Best Indian Food in the
-          Kitchener-Waterloo-Cambridge Region
+          MV&apos;z Kitchen | Best Indian Food Restaurant in Brampton
         </title>
         <meta
           property="og:title"
-          content="MV'z Kitchen - Best Indian Food in KW Region"
+          content="MV'z Kitchen - Best Indian Food Restaurant in Brampton"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="keywords"
-          content="Indian food, Kitchener, Waterloo, Cambridge, food truck, vegetarian, tandoori, indian restaurant, indian snacks"
+          content="Indian food, Brampton, vegetarian, tandoori, indian restaurant, indian snacks"
         />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/logo.png" />
@@ -31,7 +30,7 @@ export default function Home() {
         <div className="relative mb-8 h-48 scale-110 overflow-hidden object-cover md:hidden">
           <Image
             src="/hero.jpeg"
-            alt="A group of customers outside the MV'z Kitchen Food Truck in Kitchener, Ontario"
+            alt="A group of customers outside the MV'z Kitchen Restaurant in Brampton, Ontario"
             className="object-cover"
             fill
           />
@@ -49,7 +48,7 @@ export default function Home() {
         <div className="relative">
           <Image
             src="/HeroCropped.png"
-            alt="A group of customers outside the MV'z Kitchen Food Truck in Kitchener, Ontario"
+            alt="A group of customers outside the MV'z Kitchen Restaurant in Brampton, Ontario"
             width={2402}
             height={1407}
             className="hidden w-full md:block"
@@ -67,9 +66,9 @@ export default function Home() {
         </div>
 
         <p className="font-bold md:text-2xl">
-          Experience the freshest Indian food in Kitchener, Waterloo, and
-          Cambridge. Join us to savor a fusion of traditional flavors and modern
-          twists, bringing the vibrant tastes of Indian restaurants to you.
+          Experience the freshest Indian food in Brampton. Join us to savor a
+          fusion of traditional flavors and modern twists, bringing the vibrant
+          tastes of Indian restaurants to you.
         </p>
         <hr className="my-8 border border-black" />
         <div className="grid gap-8 lg:grid-cols-3 lg:gap-2">
@@ -93,9 +92,9 @@ export default function Home() {
           <div>
             <h2 className="text-lg font-extrabold">Location</h2>
             <br />
-            <p>120 Pioneer Drive</p>
-            <p>Kitchener, ON</p>
-            <p>N2P 2C2</p>
+            <p>9280 Goreway Dr Unit C107</p>
+            <p>Brampton, ON</p>
+            <p>L6T 0C4</p>
           </div>
           <div>
             <h2 className="text-lg font-extrabold">Contact</h2>

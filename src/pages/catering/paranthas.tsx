@@ -17,7 +17,7 @@ export default function CategoryPage() {
         <title>Indian Paranthas & Breads | MV&apos;z Kitchen Catering</title>
         <meta
           name="description"
-          content="Fresh, handmade Indian paranthas and breads for catering. Traditional and stuffed varieties available for events in Kitchener-Waterloo region."
+          content="Fresh, handmade Indian paranthas and breads for catering. Traditional and stuffed varieties available for events in Brampton."
         />
         <link rel="icon" href="/logo.png" />
         <meta

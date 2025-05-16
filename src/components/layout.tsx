@@ -197,11 +197,11 @@ export function Layout({ children }: LayoutProps) {
             target="_blank"
             className="hover:text-white hover:underline"
           >
-            120 Pioneer Dr
+            9280 Goreway Dr Unit C107
             <br />
-            Kitchener, ON
+            Brampton, ON
             <br />
-            N2P 2C2
+            L6T 0C4
           </Link>
         </div>
 

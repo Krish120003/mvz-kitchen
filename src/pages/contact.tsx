@@ -10,14 +10,14 @@ export default function Contact() {
         <title>MV&apos;z Kitchen | Contact Us</title>
         <meta
           name="description"
-          content="Contact MV'z Kitchen food truck in Kitchener-Waterloo-Cambridge. Call, message, or visit us for authentic Indian street food experience."
+          content="Contact MV'z Kitchen restaurant in Brampton. Call, message, or visit us for authentic Indian street food experience."
         />
         <link rel="icon" href="/logo.png" />
 
         <meta property="og:title" content="MV'z Kitchen | Contact Us" />
         <meta
           property="og:description"
-          content="Contact MV'z Kitchen food truck in Kitchener-Waterloo for authentic Indian street food"
+          content="Contact MV'z Kitchen restaurant in Brampton for authentic Indian street food"
         />
         <meta property="og:image" content="/logo.png" />
         <meta property="og:url" content="https://mvzkitchen.com/contact" />
@@ -25,7 +25,7 @@ export default function Contact() {
         <meta name="twitter:title" content="MV'z Kitchen | Contact Us" />
         <meta
           name="twitter:description"
-          content="Contact MV'z Kitchen food truck in Kitchener-Waterloo for authentic Indian street food"
+          content="Contact MV'z Kitchen restaurant in Brampton for authentic Indian street food"
         />
         <meta name="twitter:image" content="/logo.png" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -79,9 +79,9 @@ export default function Contact() {
                 target="_blank"
                 className="hover:underline"
               >
-                <p>120 Pioneer Drive</p>
-                <p>Kitchener, ON</p>
-                <p>N2P 2C2</p>
+                <p>9280 Goreway Dr Unit C107</p>
+                <p>Brampton, ON</p>
+                <p>L6T 0C4</p>
               </Link>
             </div>
 

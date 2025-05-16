@@ -17,7 +17,7 @@ export default function CategoryPage() {
         <title>Indian Appetizers & Starters | MV&apos;z Kitchen Catering</title>
         <meta
           name="description"
-          content="Discover our delicious Indian appetizers for catering - from classic Samosas to Chat Papri. Perfect starters for your next event in Kitchener-Waterloo region."
+          content="Discover our delicious Indian appetizers for catering - from classic Samosas to Chat Papri. Perfect starters for your next event in Brampton."
         />
         <link rel="icon" href="/logo.png" />
 
@@ -60,8 +60,8 @@ export default function CategoryPage() {
         <p className="mb-8 mt-4">
           Start your event with our delicious selection of authentic Indian
           appetizers. Perfect for corporate events, weddings, and private
-          parties in the Kitchener-Waterloo-Cambridge region. Each appetizer is
-          freshly prepared with authentic spices and ingredients.
+          parties in the Brampton region. Each appetizer is freshly prepared
+          with authentic spices and ingredients.
         </p>
 
         <div className="mb-8">

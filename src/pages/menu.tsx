@@ -18,8 +18,8 @@ export default function Menu() {
   return (
     <>
       <Head>
-        <title>MV&apos;z Kitchen | Indian Food Truck Menu</title>
-        <meta name="description" content="MV'z Kitchen Food Truck serves " />
+        <title>MV&apos;z Kitchen | Indian Restaurant Menu</title>
+        <meta name="description" content="MV'z Kitchen Restaurant serves " />
         <link rel="icon" href="/logo.png" />
 
         <meta property="og:title" content="MV'z Kitchen | Menu" />
@@ -33,15 +33,15 @@ export default function Menu() {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <Layout>
-        <h1 className="text-2xl font-bold">Food Truck Menu</h1>
+        <h1 className="text-2xl font-bold">Restaurant Menu</h1>
         <p className="mt-4">
-          Experience the best Indian food in the Kitchener-Waterloo-Cambridge
-          region with MV&apos;z Kitchen. Our menu features a wide variety of
-          traditional Indian dishes, snacks, and street food, all prepared with
-          the freshest ingredients. Whether you&apos;re craving classic Indian
-          curries, flavorful biryanis, or delicious Indian snacks, our food
-          truck brings the authentic taste of Indian restaurant s to you. Join
-          us and indulge in the rich and vibrant flavors of India.
+          Experience the best Indian food in Brampton with MV&apos;z Kitchen.
+          Our menu features a wide variety of traditional Indian dishes, snacks,
+          and street food, all prepared with the freshest ingredients. Whether
+          you&apos;re craving classic Indian curries, flavorful biryanis, or
+          delicious Indian snacks, our food truck brings the authentic taste of
+          Indian restaurant s to you. Join us and indulge in the rich and
+          vibrant flavors of India.
         </p>
         <hr className="my-8 border border-black" />
         <ol className="space-y-8">
