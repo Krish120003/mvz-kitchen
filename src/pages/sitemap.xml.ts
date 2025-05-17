@@ -1,4 +1,4 @@
-import { GetServerSideProps } from "next";
+import type { GetServerSideProps } from "next";
 import { MVZMenuCategories, MVZMenuItems } from "~/data/menuData";
 import { ALL_LOCATIONS } from "~/data/locationData";
 

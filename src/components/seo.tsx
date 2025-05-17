@@ -1,5 +1,7 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { MVZMenuItems, MVZMenuCategories } from "~/data/menuData";
+import { MAIN_LOCATION, SERVICE_LOCATIONS } from "~/data/locationData";
 
 type SEOProps = {
   title?: string;
@@ -16,14 +18,6 @@ type MenuItem = {
   description: string;
   category: string;
   price?: string;
-};
-
-type MenuSection = {
-  [category: string]: {
-    "@type": string;
-    name: string;
-    description: string;
-  }[];
 };
 
 const defaultSEO = {
@@ -49,7 +43,7 @@ export const SEO = ({
   const metaTitle = title
     ? `${title} | ${defaultSEO.siteName}`
     : `${defaultSEO.siteName} | Best Vegetarian Indian Food in Brampton`;
-  const metaKeywords = keywords || defaultSEO.keywords;
+  const metaKeywords = keywords ?? defaultSEO.keywords;
   const url = `${defaultSEO.url}${router.asPath}`;
 
   return (
@@ -104,65 +98,136 @@ type RestaurantJSONLDProps = {
   locations?: Location[];
 };
 
-export const RestaurantJSONLD = ({ locations = [] }: RestaurantJSONLDProps) => {
+export const RestaurantJSONLD = ({
+  locations: _ = [],
+}: RestaurantJSONLDProps) => {
+  // Default fallback values for essential fields
+  const phone = MAIN_LOCATION.phone ?? "+1 (365) 378-0009";
+  const email = MAIN_LOCATION.email ?? "order@mvzkitchen.ca";
+  const addressStreet =
+    MAIN_LOCATION.address?.street ?? "9280 Goreway Dr Unit C107";
+  const addressCity = MAIN_LOCATION.address?.city ?? "Brampton";
+  const addressRegion = MAIN_LOCATION.address?.province ?? "ON";
+  const addressPostalCode = MAIN_LOCATION.address?.postalCode ?? "L6T 0C4";
+
+  // Generate opening hours from MAIN_LOCATION data
+  const openingHoursSpecification = Object.entries(
+    MAIN_LOCATION.openingHours ?? {},
+  )
+    .filter(([_, hours]) => hours !== "Closed") // Filter out closed days
+    .map(([day, hours]) => {
+      // Parse opening hours format: "3:00 PM - 9:00 PM" into 24-hour format
+      const [start = "", end = ""] = (hours ?? "").split(" - ");
+
+      // Simple conversion to 24-hour format
+      const formatTime = (timeStr: string) => {
+        if (timeStr.includes("PM")) {
+          const [hourStr = "12"] = timeStr.replace(" PM", "").split(":");
+          const hour = parseInt(hourStr, 10);
+          return hour === 12
+            ? timeStr.replace(" PM", "")
+            : timeStr.replace(`${hour}`, `${hour + 12}`).replace(" PM", "");
+        }
+        return timeStr.replace(" AM", "");
+      };
+
+      return {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [day], // Put each day in its own specification for clarity
+        opens: formatTime(start),
+        closes: formatTime(end),
+      };
+    });
+
+  // Generate menu items for hasMenu property
+  const menuItemsByCategory: Record<string, MenuItem[]> = {};
+
+  // Group menu items by category
+  MVZMenuItems.forEach((item) => {
+    if (!menuItemsByCategory[item.category]) {
+      menuItemsByCategory[item.category] = [];
+    }
+    menuItemsByCategory[item.category]!.push(item);
+  });
+
+  // Create menu sections
+  const menuSections = MVZMenuCategories.map((category) => {
+    const items = menuItemsByCategory[category] ?? [];
+
+    return {
+      "@type": "MenuSection",
+      name: category,
+      description: `Our selection of ${category.toLowerCase()}`,
+      hasMenuItem: items.map((item) => ({
+        "@type": "MenuItem",
+        name: item.name,
+        description: item.description,
+        offers: {
+          "@type": "Offer",
+          price: item.price ?? "0.00",
+          priceCurrency: "CAD",
+        },
+        suitableForDiet: "https://schema.org/VegetarianDiet",
+      })),
+    };
+  }).filter((section) => (section.hasMenuItem?.length ?? 0) > 0);
+
+  // Create the full JSON-LD schema based on the requirements
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "Restaurant",
     name: "MVZ Kitchen",
-    logo: "https://mvzkitchen.ca/logo.png",
+    alternateName: "MVZ Kitchen Brampton",
+    description:
+      "MVZ Kitchen offers authentic vegetarian Indian cuisine in Brampton. We serve a variety of chaats, momos, Indo-Chinese specialties, and traditional Indian mains, all prepared with authentic recipes and fresh ingredients.",
     url: "https://mvzkitchen.ca/",
-    keywords: [
-      "Vegetarian Indian Food",
-      "Indian Cuisine",
-      "Punjabi Food",
-      "Chaat",
-      "Indo-Chinese",
-      "Dahi Bhalla",
-      "Chat Papdi",
-      "Pani Puri",
-      "Chana Masala",
-      "Dal Makhani",
-      "Paneer Dishes",
-      "Momos",
-      "Tandoori",
-      "Naan",
-      "Lunch",
-      "Dinner",
-      "Takeout",
-      "Delivery",
+    logo: "https://mvzkitchen.ca/logo.png",
+    telephone: phone,
+    email: email,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: addressStreet,
+      addressLocality: addressCity,
+      addressRegion: addressRegion,
+      postalCode: addressPostalCode,
+      addressCountry: "CA",
+    },
+    servesCuisine: ["Indian", "Vegetarian", "Punjabi", "Indo-Chinese"],
+    menu: "https://mvzkitchen.ca/menu",
+    acceptsReservations: "https://mvzkitchen.ca/contact",
+    openingHoursSpecification: openingHoursSpecification,
+    priceRange: "$$",
+    sameAs: [
+      "https://www.facebook.com/mvzkitchen",
+      "https://www.instagram.com/mvzkitchen",
     ],
-    subOrganization: [
+    contactPoint: [
       {
-        "@type": "Restaurant",
-        name: "MVZ Kitchen Brampton",
-        telephone: "+1 (365) 378-0009",
-        email: "order@mvzkitchen.ca",
-        hasMenu: "https://mvzkitchen.ca/menu",
-        servesCuisine: "Indian, Vegetarian",
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: "9280 Goreway Dr Unit C107",
-          addressLocality: "Brampton",
-          addressRegion: "ON",
-          postalCode: "L6T 0C4",
-          addressCountry: "CA",
-        },
-        geo: {
-          "@type": "GeoCoordinates",
-          longitude: -79.64221,
-          latitude: 43.7477,
-        },
-        openingHoursSpecification: [
-          {
-            "@type": "OpeningHoursSpecification",
-            dayOfWeek: ["Saturday", "Sunday"],
-            opens: "15:00",
-            closes: "21:00",
-          },
-        ],
-        url: "https://mvzkitchen.ca/",
+        "@type": "ContactPoint",
+        telephone: phone,
+        contactType: "Customer Service",
+        areaServed: "CA",
+        availableLanguage: ["English", "Hindi", "Punjabi"],
+      },
+      {
+        "@type": "ContactPoint",
+        telephone: phone,
+        contactType: "Reservations",
+        areaServed: "CA",
+        availableLanguage: ["English", "Hindi", "Punjabi"],
       },
     ],
+    hasMenu: {
+      "@type": "Menu",
+      name: "MVZ Kitchen Main Menu",
+      description: "Our delicious selection of vegetarian Indian dishes.",
+      hasMenuSection: menuSections,
+    },
+    // Add service locations as locations served
+    areaServed: SERVICE_LOCATIONS.map((location) => ({
+      "@type": "City",
+      name: location.name,
+    })),
   };
 
   return (
@@ -185,6 +250,12 @@ export const MenuJSONLD = ({ menuItems }: MenuJSONLDProps) => {
       "@type": string;
       name: string;
       description: string;
+      offers?: {
+        "@type": string;
+        price: string;
+        priceCurrency: string;
+      };
+      suitableForDiet?: string;
     }>
   > = {};
 
@@ -196,12 +267,19 @@ export const MenuJSONLD = ({ menuItems }: MenuJSONLDProps) => {
       "@type": "MenuItem",
       name: item.name,
       description: item.description,
+      offers: {
+        "@type": "Offer",
+        price: item.price ?? "0.00",
+        priceCurrency: "CAD",
+      },
+      suitableForDiet: "https://schema.org/VegetarianDiet",
     });
   });
 
   const menuSectionArray = Object.keys(menuSections).map((category) => ({
     "@type": "MenuSection",
     name: category,
+    description: `Our selection of ${category.toLowerCase()}`,
     hasMenuItem: menuSections[category],
   }));
 
@@ -210,7 +288,18 @@ export const MenuJSONLD = ({ menuItems }: MenuJSONLDProps) => {
     "@type": "Menu",
     name: "MVZ Kitchen Menu",
     description: "Authentic Vegetarian Indian Food Menu",
+    inLanguage: "en-US",
     hasMenuSection: menuSectionArray,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://mvzkitchen.ca/menu",
+    },
+    publisher: {
+      "@type": "Restaurant",
+      name: "MVZ Kitchen",
+      logo: "https://mvzkitchen.ca/logo.png",
+      url: "https://mvzkitchen.ca",
+    },
   };
 
   return (
@@ -271,6 +360,10 @@ export const MenuItemJSONLD = ({ item }: MenuItemJSONLDProps) => {
       "@type": "Menu",
       name: "MVZ Kitchen Menu",
       url: "https://mvzkitchen.ca/menu",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://mvzkitchen.ca/item/${item.name.toLowerCase().replace(/\s+/g, "-")}`,
     },
   };
 

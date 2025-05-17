@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Layout } from "~/components/layout";
 import { SEO } from "~/components/seo";
 import { Instagram, Facebook } from "lucide-react";
+import { env } from "~/env";
 
 export default function Contact() {
   return (
@@ -53,18 +54,20 @@ export default function Contact() {
               </div>
             </div>
 
-            <div>
-              <h2 className="mb-4 text-xl font-bold">Location</h2>
-              <Link
-                href="https://maps.app.goo.gl/9TqJAazS222w6H9v5"
-                target="_blank"
-                className="hover:underline"
-              >
-                <p>9280 Goreway Dr Unit C107</p>
-                <p>Brampton, ON</p>
-                <p>L6T 0C4</p>
-              </Link>
-            </div>
+            {!env.NEXT_PUBLIC_HIDE_ADDRESS && (
+              <div>
+                <h2 className="mb-4 text-xl font-bold">Location</h2>
+                <Link
+                  href="https://maps.app.goo.gl/9TqJAazS222w6H9v5"
+                  target="_blank"
+                  className="hover:underline"
+                >
+                  <p>9280 Goreway Dr Unit C107</p>
+                  <p>Brampton, ON</p>
+                  <p>L6T 0C4</p>
+                </Link>
+              </div>
+            )}
 
             <div>
               <h2 className="mb-4 text-xl font-bold">Hours</h2>

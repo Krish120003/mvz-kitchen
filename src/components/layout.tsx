@@ -1,8 +1,9 @@
 import clsx from "clsx";
-import { ArrowRight, Facebook, Instagram } from "lucide-react";
+import { Facebook, Instagram } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { env } from "~/env";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -177,20 +178,22 @@ export function Layout({ children }: LayoutProps) {
             </li>
           </ul>
         </div>
-        <div className="col-span-2 text-neutral-300">
-          <h3 className="text-lg font-semibold">Address</h3>
-          <Link
-            href="https://maps.app.goo.gl/9TqJAazS222w6H9v5"
-            target="_blank"
-            className="hover:text-white hover:underline"
-          >
-            9280 Goreway Dr Unit C107
-            <br />
-            Brampton, ON
-            <br />
-            L6T 0C4
-          </Link>
-        </div>
+        {!env.NEXT_PUBLIC_HIDE_ADDRESS && (
+          <div className="col-span-2 text-neutral-300">
+            <h3 className="text-lg font-semibold">Address</h3>
+            <Link
+              href="https://maps.app.goo.gl/9TqJAazS222w6H9v5"
+              target="_blank"
+              className="hover:text-white hover:underline"
+            >
+              9280 Goreway Dr Unit C107
+              <br />
+              Brampton, ON
+              <br />
+              L6T 0C4
+            </Link>
+          </div>
+        )}
 
         {/* contact */}
         <div className="col-span-3 text-neutral-300">

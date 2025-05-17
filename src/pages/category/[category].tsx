@@ -1,8 +1,7 @@
-import { GetStaticPaths, GetStaticProps } from "next";
+import type { GetStaticPaths, GetStaticProps } from "next";
 import { Layout } from "~/components/layout";
 import { SEO, MenuJSONLD } from "~/components/seo";
 import { MVZMenuItems, MVZMenuCategories } from "~/data/menuData";
-import Image from "next/image";
 import Link from "next/link";
 
 type CategoryPageProps = {

@@ -3,6 +3,7 @@ import { Layout } from "~/components/layout";
 import { SEO, RestaurantJSONLD } from "~/components/seo";
 import { MVZFeaturedItems, MVZMenuCategories } from "~/data/menuData";
 import Link from "next/link";
+import { env } from "~/env";
 
 export default function Home() {
   return (
@@ -24,10 +25,7 @@ export default function Home() {
           <div className="absolute -right-2 top-4 z-10 rotate-12">
             <div className="relative">
               <div className="relative rounded-full bg-red-600 px-4 py-2 font-extrabold text-white shadow-[0_10px_20px_rgba(0,0,0,0.7)]">
-                <div className="text-center text-xs">NOW OPEN</div>
-                <div className="text-center text-lg tracking-tighter">
-                  FOR 2025
-                </div>
+                <div className="text-center text-xs">OPENING SOON</div>
               </div>
             </div>
           </div>
@@ -43,10 +41,7 @@ export default function Home() {
           <div className="absolute right-8 top-12 z-10 hidden rotate-12 md:block">
             <div className="relative">
               <div className="relative rounded-full bg-red-600 px-6 py-3 font-extrabold text-white shadow-[0_15px_30px_rgba(0,0,0,0.7)]">
-                <div className="text-center text-sm">NOW OPEN</div>
-                <div className="text-center text-2xl tracking-tighter">
-                  FOR 2025
-                </div>
+                <div className="text-center text-sm">OPENING SOON</div>
               </div>
             </div>
           </div>
@@ -135,7 +130,7 @@ export default function Home() {
             <br />
             <div className="grid grid-cols-1 gap-2">
               <p className="grid grid-cols-2 border-b border-black">
-                <span className="font-bold">Mon - Fri</span> Closed
+                <span className="font-bold">Mon - Fri</span> 9 AM to 9 PM
               </p>
 
               {/* <p className="grid grid-cols-2 border-b border-black">
@@ -143,27 +138,29 @@ export default function Home() {
               </p> */}
 
               <p className="grid grid-cols-2 border-b border-black">
-                <span className="font-bold">Sat, Sun</span> 3 PM to 9 PM
+                <span className="font-bold">Sat, Sun</span> 9 AM to 10 PM
               </p>
             </div>
           </div>
-          <div>
-            <h2 className="text-lg font-extrabold">Location</h2>
-            <br />
-            <p>9280 Goreway Dr Unit C107</p>
-            <p>Brampton, ON</p>
-            <p>L6T 0C4</p>
-            <p className="mt-3">
-              <a
-                href="https://maps.google.com/?q=9280+Goreway+Dr+Unit+C107,+Brampton,+ON+L6T+0C4"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-orange-600 hover:underline"
-              >
-                Get Directions
-              </a>
-            </p>
-          </div>
+          {!env.NEXT_PUBLIC_HIDE_ADDRESS && (
+            <div>
+              <h2 className="text-lg font-extrabold">Location</h2>
+              <br />
+              <p>9280 Goreway Dr Unit C107</p>
+              <p>Brampton, ON</p>
+              <p>L6T 0C4</p>
+              <p className="mt-3">
+                <a
+                  href="https://maps.google.com/?q=9280+Goreway+Dr+Unit+C107,+Brampton,+ON+L6T+0C4"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-orange-600 hover:underline"
+                >
+                  Get Directions
+                </a>
+              </p>
+            </div>
+          )}
           <div>
             <h2 className="text-lg font-extrabold">Contact</h2>
             <br />
@@ -178,9 +175,9 @@ export default function Home() {
               </a>
             </p>
             <p className="mt-3">
-              <a href="/contact" className="text-orange-600 hover:underline">
+              <Link href="/contact" className="text-orange-600 hover:underline">
                 Send us a message
-              </a>
+              </Link>
             </p>
           </div>
         </div>

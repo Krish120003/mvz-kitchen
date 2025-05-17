@@ -16,9 +16,7 @@ export type LocationInfo = {
   };
   phone?: string;
   email?: string;
-  openingHours?: {
-    [day: string]: string;
-  };
+  openingHours?: Record<string, string>;
   distance?: string;
   deliveryTime?: string;
   isMainLocation: boolean;

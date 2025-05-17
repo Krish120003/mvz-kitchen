@@ -1,10 +1,11 @@
-import { GetStaticPaths, GetStaticProps } from "next";
+import type { GetStaticPaths, GetStaticProps } from "next";
+import type { LocationInfo } from "~/data/locationData";
 import { Layout } from "~/components/layout";
 import { SEO, RestaurantJSONLD } from "~/components/seo";
-import { ALL_LOCATIONS, LocationInfo } from "~/data/locationData";
+import { ALL_LOCATIONS } from "~/data/locationData";
 import { MVZMenuItems, MVZMenuCategories } from "~/data/menuData";
-import Image from "next/image";
 import Link from "next/link";
+import { env } from "~/env";
 
 type LocationPageProps = {
   locationInfo: LocationInfo;
@@ -17,6 +18,24 @@ export default function LocationPage({
 }: LocationPageProps) {
   const isMainLocation = locationInfo.isMainLocation;
 
+  // Create a Location object for the RestaurantJSONLD component
+  const locationData = {
+    name: locationInfo.name,
+    telephone: locationInfo.phone ?? "+1 (365) 378-0009",
+    address: {
+      streetAddress:
+        locationInfo.address?.street ?? "9280 Goreway Dr Unit C107",
+      addressLocality: locationInfo.address?.city ?? "Brampton",
+      addressRegion: locationInfo.address?.province ?? "ON",
+      postalCode: locationInfo.address?.postalCode ?? "L6T 0C4",
+    },
+    geo: {
+      longitude: isMainLocation ? -79.64221 : 0,
+      latitude: isMainLocation ? 43.7477 : 0,
+    },
+    url: `https://mvzkitchen.ca/location/${locationInfo.name.toLowerCase()}`,
+  };
+
   return (
     <>
       <SEO
@@ -24,7 +43,7 @@ export default function LocationPage({
         description={locationInfo.meta.description}
         keywords={locationInfo.meta.keywords}
       />
-      <RestaurantJSONLD />
+      <RestaurantJSONLD locations={[locationData]} />
       <Layout>
         <div className="mb-6">
           <Link href="/" className="text-orange-600 hover:underline">
@@ -245,7 +264,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }));
 
   return {
-    paths,
+    paths: env.NEXT_PUBLIC_HIDE_ADDRESS ? [] : paths,
     fallback: false, // Show 404 for non-existent locations
   };
 };

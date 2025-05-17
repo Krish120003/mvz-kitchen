@@ -1,8 +1,7 @@
-import { GetStaticPaths, GetStaticProps } from "next";
+import type { GetStaticPaths, GetStaticProps } from "next";
 import { Layout } from "~/components/layout";
 import { SEO, MenuItemJSONLD } from "~/components/seo";
 import { MVZMenuItems } from "~/data/menuData";
-import Image from "next/image";
 import Link from "next/link";
 
 type ItemPageProps = {
@@ -70,12 +69,12 @@ export default function ItemPage({ item, relatedItems }: ItemPageProps) {
                   >
                     Call to Order
                   </a>
-                  <a
+                  <Link
                     href="/contact"
                     className="rounded-full border border-orange-600 px-5 py-2 font-medium text-orange-600 hover:bg-orange-50"
                   >
                     Contact Us
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

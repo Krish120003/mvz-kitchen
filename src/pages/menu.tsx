@@ -1,5 +1,5 @@
 import { Layout } from "~/components/layout";
-import { SEO, MenuJSONLD } from "~/components/seo";
+import { SEO, MenuJSONLD, RestaurantJSONLD } from "~/components/seo";
 import { MVZMenuItems, MVZMenuCategories } from "~/data/menuData";
 import Link from "next/link";
 
@@ -22,6 +22,7 @@ export default function Menu() {
         description="Order delicious vegetarian Indian food for takeout or delivery from MVZ Kitchen in Brampton. Featuring chaats, Indo-Chinese, tandoori specialties, momos, and more."
         keywords="vegetarian Indian food, Brampton, Indian restaurant menu, Chaat, Momos, Indo-Chinese, Soya Chaap, Paneer, Vegetarian menu"
       />
+      <RestaurantJSONLD />
       <MenuJSONLD menuItems={MVZMenuItems} />
       <Layout>
         <h1 className="text-2xl font-bold">Restaurant Menu</h1>
@@ -50,7 +51,7 @@ export default function Menu() {
 
         <ol className="space-y-12">
           {MVZMenuCategories.map((category) => {
-            const categoryItems = itemsGroupedByCategory[category] || [];
+            const categoryItems = itemsGroupedByCategory[category] ?? [];
 
             return (
               <li
