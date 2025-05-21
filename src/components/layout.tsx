@@ -46,6 +46,9 @@ export function Layout({ children }: LayoutProps) {
               </h1>
             </Link>
 
+            <div className="my-2 inline-block animate-pulse rounded-md border-2 border-red-500 p-2 pl-11 text-2xl font-bold text-red-500 shadow-md">
+              NEW: Opening Soon in Brampton
+            </div>
             <div className="mb-8 grid grid-cols-2">
               <Link href={"/"} className="lg:hidden">
                 <Image
