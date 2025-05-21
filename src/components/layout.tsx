@@ -142,7 +142,7 @@ export function Layout({ children }: LayoutProps) {
             <div>
               <h2 className="text-lg font-semibold">MV&apos;z Kitchen</h2>
               <p className="text-wrap text-neutral-300">
-                Serving flavourful Indian food across the KWC region.
+                Serving flavourful Indian food across the Brampton region.
               </p>
             </div>
           </div>
@@ -186,7 +186,9 @@ export function Layout({ children }: LayoutProps) {
               target="_blank"
               className="hover:text-white hover:underline"
             >
-              9280 Goreway Dr Unit C107
+              9280 Goreway Dr
+              <br />
+              Unit C107
               <br />
               Brampton, ON
               <br />
