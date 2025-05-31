@@ -1,6 +1,9 @@
-# Allow all crawlers
+# *
 User-agent: *
 Allow: /
 
-# Sitemap location
-Sitemap: https://mvzkitchen.ca/sitemap.xml 
+# Host
+Host: https://mvzkitchen.ca
+
+# Sitemaps
+Sitemap: https://mvzkitchen.ca/sitemap.xml
