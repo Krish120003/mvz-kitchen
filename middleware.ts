@@ -66,7 +66,10 @@ async function sendBotAnalytics(
   request: NextRequest,
 ): Promise<void> {
   const client = getPostHogClient();
-  if (!client) return;
+  if (!client) {
+    console.error("PostHog client not initialized");
+    return;
+  }
 
   try {
     const url = new URL(request.url);
