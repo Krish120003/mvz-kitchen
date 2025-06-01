@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://mvzkitchen.ca
+Host: https://www.mvzkitchen.ca
 
 # Sitemaps
-Sitemap: https://mvzkitchen.ca/sitemap.xml
+Sitemap: https://www.mvzkitchen.ca/sitemap.xml
