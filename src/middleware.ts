@@ -117,15 +117,16 @@ export function middleware(request: NextRequest) {
 export const config = {
   // Matcher to run on all paths except API routes, _next static files, and favicon
   // Adjust this if you want to skip certain assets or routes
-  matcher: [
-    /*
-     * Match all request paths except for the ones starting with:
-     * - api (API routes)
-     * - _next/static (static files)
-     * - _next/image (image optimization files)
-     * - favicon.ico (favicon file)
-     * - public folder files (direct static file access)
-     */
-    "/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml).*)",
-  ],
+  // matcher: [
+  //   /*
+  //    * Match all request paths except for the ones starting with:
+  //    * - api (API routes)
+  //    * - _next/static (static files)
+  //    * - _next/image (image optimization files)
+  //    * - favicon.ico (favicon file)
+  //    * - public folder files (direct static file access)
+  //    */
+  //   // "/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml).*)",
+  // ],
+  matcher: "/",
 };
