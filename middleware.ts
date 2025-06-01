@@ -106,6 +106,7 @@ export function middleware(request: NextRequest) {
   const botName = detectBot(userAgent);
 
   if (botName) {
+    console.log("Bot detected:", botName);
     // Send analytics asynchronously without blocking the response
     after(async () => {
       await sendBotAnalytics(botName, request);
