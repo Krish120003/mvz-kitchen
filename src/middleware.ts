@@ -1,6 +1,5 @@
 import type { NextRequest } from "next/server";
 import { NextResponse, after } from "next/server";
-import { PostHog } from "posthog-node";
 
 // Bot user agent patterns to detect
 const BOT_PATTERNS = {
@@ -34,54 +33,30 @@ function detectBot(userAgent: string): BotName | null {
   return null;
 }
 
-let posthogClient: PostHog | null = null;
-
-function getPostHogClient(): PostHog | null {
+async function sendBotAnalytics(
+  botName: BotName,
+  request: NextRequest,
+): Promise<void> {
   try {
     const posthogHost = process.env.POSTHOG_HOST;
     const posthogApiKey = process.env.POSTHOG_API_KEY;
 
     if (!posthogHost || !posthogApiKey) {
       console.warn("PostHog environment variables not configured");
-      return null;
+      return;
     }
 
-    if (!posthogClient) {
-      posthogClient = new PostHog(posthogApiKey, {
-        host: posthogHost,
-        flushAt: 1, // Flush immediately in middleware
-        flushInterval: 0, // Don't wait
-      });
-    }
-
-    return posthogClient;
-  } catch (error) {
-    console.error("Failed to initialize PostHog client:", error);
-    return null;
-  }
-}
-
-async function sendBotAnalytics(
-  botName: BotName,
-  request: NextRequest,
-): Promise<void> {
-  const client = getPostHogClient();
-  if (!client) {
-    console.error("PostHog client not initialized");
-    return;
-  }
-
-  try {
     const url = new URL(request.url);
     const clientIp =
       request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ??
       request.headers.get("x-real-ip") ??
       "unknown";
 
-    client.capture({
-      distinctId: `bot:${clientIp}`,
+    const eventData = {
+      api_key: posthogApiKey,
       event: "bot_page_fetch",
       properties: {
+        distinct_id: `bot:${clientIp}`,
         path: url.pathname + url.search,
         hostname: url.hostname,
         user_agent: request.headers.get("user-agent") ?? "",
@@ -89,35 +64,54 @@ async function sendBotAnalytics(
         referrer: request.headers.get("referer") ?? "",
         timestamp: new Date().toISOString(),
       },
+      timestamp: new Date().toISOString(),
+    };
+
+    // Use fetch to send data to PostHog (compatible with Edge Runtime)
+    const response = await fetch(`${posthogHost}/capture/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(eventData),
     });
 
-    // Ensure events are sent immediately
-    await client.shutdown();
+    if (!response.ok) {
+      console.error(
+        `PostHog API error: ${response.status} ${response.statusText}`,
+      );
+    }
   } catch (error) {
     console.error("Error in bot analytics:", error);
   }
 }
 
 export function middleware(request: NextRequest) {
-  const userAgent = request.headers.get("user-agent") ?? "";
+  try {
+    const userAgent = request.headers.get("user-agent") ?? "";
 
-  // Skip empty user agents
-  if (!userAgent) {
+    // Skip empty user agents
+    if (!userAgent) {
+      return NextResponse.next();
+    }
+
+    const botName = detectBot(userAgent);
+
+    if (botName) {
+      console.log("Bot detected:", botName);
+      // Send analytics asynchronously without blocking the response
+      after(async () => {
+        await sendBotAnalytics(botName, request);
+      });
+    }
+
+    // Always continue with the request
+    return NextResponse.next();
+  } catch (error) {
+    console.error("Middleware error:", error);
+    // Always continue with the request even if there's an error
     return NextResponse.next();
   }
-
-  const botName = detectBot(userAgent);
-
-  if (botName) {
-    console.log("Bot detected:", botName);
-    // Send analytics asynchronously without blocking the response
-    after(async () => {
-      await sendBotAnalytics(botName, request);
-    });
-  }
-
-  // Always continue with the request
-  return NextResponse.next();
 }
 
 export const config = {
