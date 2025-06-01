@@ -33,6 +33,11 @@ const config = {
         source: "/ingest/decide",
         destination: "https://us.i.posthog.com/decide",
       },
+      {
+        // Lowercase robots.txt
+        source: "/Robots.txt",
+        destination: "/robots.txt",
+      },
     ];
   },
 
