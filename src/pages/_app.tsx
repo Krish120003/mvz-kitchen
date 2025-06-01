@@ -7,7 +7,6 @@ import { PostHogProvider } from "posthog-js/react";
 import Head from "next/head";
 
 import "~/styles/globals.css";
-import Script from "next/script";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   useEffect(() => {

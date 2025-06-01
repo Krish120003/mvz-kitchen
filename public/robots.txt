@@ -1,3 +1,9 @@
 # *
 User-agent: *
 Allow: /
+
+# Host
+Host: https://www.mvzkitchen.ca
+
+# Sitemaps
+Sitemap: https://www.mvzkitchen.ca/sitemap.xml

@@ -1,5 +1,5 @@
-import { NextRequest, NextResponse } from "next/server";
-import { after } from "next/server";
+import type { NextRequest } from "next/server";
+import { NextResponse, after } from "next/server";
 import { PostHog } from "posthog-node";
 
 // Bot user agent patterns to detect
@@ -74,19 +74,19 @@ async function sendBotAnalytics(
   try {
     const url = new URL(request.url);
     const clientIp =
-      request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
-      request.headers.get("x-real-ip") ||
+      request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ??
+      request.headers.get("x-real-ip") ??
       "unknown";
 
-    await client.capture({
+    client.capture({
       distinctId: `bot:${clientIp}`,
       event: "bot_page_fetch",
       properties: {
         path: url.pathname + url.search,
         hostname: url.hostname,
-        user_agent: request.headers.get("user-agent") || "",
+        user_agent: request.headers.get("user-agent") ?? "",
         bot_name: botName.toLowerCase(),
-        referrer: request.headers.get("referer") || "",
+        referrer: request.headers.get("referer") ?? "",
         timestamp: new Date().toISOString(),
       },
     });
@@ -99,7 +99,7 @@ async function sendBotAnalytics(
 }
 
 export function middleware(request: NextRequest) {
-  const userAgent = request.headers.get("user-agent") || "";
+  const userAgent = request.headers.get("user-agent") ?? "";
 
   // Skip empty user agents
   if (!userAgent) {
