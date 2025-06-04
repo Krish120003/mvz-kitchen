@@ -60,6 +60,19 @@ export function Layout({ children }: LayoutProps) {
                 />
               </Link>
               <ul className="grid select-none grid-cols-1 gap-2 pb-8 pr-4 pt-4 text-xl font-bold underline lg:grid-cols-1 lg:gap-4 lg:pl-11 lg:text-2xl">
+                <li className="mb-2 lg:mb-0">
+                  <a
+                    href="https://www.clover.com/online-ordering/mvz-kitchen-brampton"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={clsx(
+                      "group flex w-full items-center justify-end gap-2 rounded-md bg-orange-500 px-4 py-2 text-white !no-underline hover:bg-orange-600 lg:justify-normal",
+                    )}
+                    draggable="false"
+                  >
+                    Order Pickup
+                  </a>
+                </li>
                 <li>
                   <Link
                     href="/menu"
