@@ -53,18 +53,6 @@ export default function Home() {
           vibrant tastes of authentic Indian cuisine to you.
         </p>
 
-        {/* Order Pickup Button Section */}
-        <div className="my-8 text-center">
-          <a
-            href="https://www.clover.com/online-ordering/mvz-kitchen-brampton"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block transform rounded-lg bg-orange-500 px-8 py-4 text-2xl font-bold text-white shadow-lg transition-transform duration-200 hover:scale-105 hover:bg-orange-600 hover:shadow-xl"
-          >
-            Order Online for Pickup
-          </a>
-        </div>
-
         {/* Featured Items Section */}
         <div className="my-10">
           <h2 className="mb-4 text-xl font-extrabold">Featured Specialties</h2>
