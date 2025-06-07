@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { env } from "~/env";
+import MobileFooter from "./MobileFooter"; // Adjust path if necessary, but should be in the same directory
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -238,6 +239,7 @@ export function Layout({ children }: LayoutProps) {
           Reserved.
         </p>
       </footer>
+      <MobileFooter /> {/* <--- Add the new component here */}
     </>
   );
 }
