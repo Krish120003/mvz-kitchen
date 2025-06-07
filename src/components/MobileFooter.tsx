@@ -2,7 +2,7 @@ import React from 'react';
 
 const MobileFooter = () => {
   // Hardcoded values as environment variables are not available
-  const gmapsUrl = "https://maps.app.goo.gl/9TqJAazS222w6H9v5";
+  const appleMapsUrl = "https://maps.apple.com/place?address=107-9280%20Goreway%20Dr,%20Brampton%20ON%20L6P%200M7,%20Canada&coordinate=43.758433,-79.692053&name=MV%27z%20Kitchen&place-id=I6A66AB063F9B3868&map=explore";
   const address = "9280 Goreway Dr, Unit C107, Brampton, ON L6T 0C4";
   const phoneNumberHref = "tel:+13653780009";
   const phoneNumberDisplay = "+1 (365) 378-0009"; // Slightly more readable display
@@ -12,7 +12,7 @@ const MobileFooter = () => {
     <footer className="fixed bottom-0 left-0 z-50 w-full bg-neutral-100 p-3 shadow-[0_-2px_5px_rgba(0,0,0,0.1)] md:hidden">
       <div className="mx-auto flex max-w-md flex-col items-center">
         <a
-          href={gmapsUrl}
+          href={appleMapsUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="mb-2 w-full rounded-md bg-neutral-200 py-2 px-4 text-center text-sm font-medium text-neutral-800 hover:bg-neutral-300"
