@@ -15,7 +15,7 @@ const MobileFooter = () => {
           href={gmapsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="mb-2 text-center text-xs text-neutral-600 hover:underline"
+          className="mb-2 w-full rounded-md bg-neutral-200 py-2 px-4 text-center text-sm font-medium text-neutral-800 hover:bg-neutral-300"
         >
           {address}
         </a>
