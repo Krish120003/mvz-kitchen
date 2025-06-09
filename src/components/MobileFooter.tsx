@@ -50,7 +50,7 @@ const MobileFooter = () => {
             // The `cloverOrderUrl` constant holds the link URL.
 
             // Ensure variant has a fallback for safety, though the hook usually provides 'control' or false.
-            const currentVariant = variant || 'control'; // Or some other sensible default if variant can be null/undefined
+            const currentVariant = variant ?? 'control'; // Or some other sensible default if variant can be null/undefined
 
             posthog.capture('mobile_footer_button_click', {
               button_variant: currentVariant,
