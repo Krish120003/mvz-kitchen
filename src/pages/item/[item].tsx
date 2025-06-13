@@ -34,9 +34,9 @@ export default function ItemPage({ item, relatedItems }: ItemPageProps) {
               <h1 className="text-3xl font-bold text-orange-800">
                 {item.name}
               </h1>
-              <div className="my-3 font-medium text-orange-600">
+              {/* <div className="my-3 font-medium text-orange-600">
                 ${item.price}
-              </div>
+              </div> */}
 
               <div className="my-4">
                 <h2 className="text-lg font-semibold">Description</h2>
@@ -123,7 +123,7 @@ export default function ItemPage({ item, relatedItems }: ItemPageProps) {
                     {relatedItem.description}
                   </p>
                   <div className="mt-2 text-orange-600">
-                    ${relatedItem.price}
+                    {/* ${relatedItem.price} */}
                   </div>
                 </Link>
               ))}

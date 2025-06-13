@@ -61,7 +61,7 @@ export default function CategoryPage({
             >
               <div className="flex justify-between">
                 <h2 className="text-xl font-bold">{item.name}</h2>
-                <div className="font-bold text-orange-600">${item.price}</div>
+                {/* <div className="font-bold text-orange-600">${item.price}</div> */}
               </div>
               <p className="mt-2 text-gray-600">{item.description}</p>
               <div className="mt-4 text-sm text-orange-600 hover:underline">

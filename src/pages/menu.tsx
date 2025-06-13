@@ -2,6 +2,7 @@ import { Layout } from "~/components/layout";
 import { SEO, MenuJSONLD, RestaurantJSONLD } from "~/components/seo";
 import { MVZMenuItems, MVZMenuCategories } from "~/data/menuData";
 import Link from "next/link";
+import { useEffect } from "react";
 
 export default function Menu() {
   const itemsGroupedByCategory = MVZMenuItems.reduce(
@@ -14,6 +15,13 @@ export default function Menu() {
     },
     {},
   );
+
+  // if the page has utm_source=qr_code, redirect to /menu_qr_code.pdf
+  useEffect(() => {
+    if (window.location.search.includes("utm_source=qr_code")) {
+      window.location.href = "/mvz-kitchen-trifold-menu.pdf";
+    }
+  }, []);
 
   return (
     <>
@@ -81,9 +89,9 @@ export default function Menu() {
                       >
                         <div className="flex justify-between">
                           <h3 className="text-lg font-bold">{item.name}</h3>
-                          <div className="font-bold text-orange-600">
+                          {/* <div className="font-bold text-orange-600">
                             ${item.price}
-                          </div>
+                          </div> */}
                         </div>
                         <p className="mt-2 text-gray-600">{item.description}</p>
                         <div className="mt-3 text-sm text-orange-600 hover:underline">

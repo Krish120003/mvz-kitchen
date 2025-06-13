@@ -197,7 +197,7 @@ export default function LocationPage({
                   {item.description}
                 </p>
                 <div className="mt-3 font-medium text-orange-600">
-                  ${item.price}
+                  {/* ${item.price} */}
                 </div>
               </Link>
             ))}
