@@ -98,8 +98,8 @@ export default function ItemPage({ item, relatedItems }: ItemPageProps) {
                   {item.category}
                 </Link>
 
-                <h3 className="mt-3 font-semibold">Price</h3>
-                <p>${item.price}</p>
+                {/* <h3 className="mt-3 font-semibold">Price</h3>
+                <p>${item.price}</p> */}
 
                 <h3 className="mt-3 font-semibold">Dietary Information</h3>
                 <p>Vegetarian</p>
