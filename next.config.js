@@ -43,6 +43,23 @@ const config = {
 
   // This is required to support PostHog trailing slash API requests
   skipTrailingSlashRedirect: true,
+
+  async redirects() {
+    return [
+      {
+        source: '/full_menu',
+        destination: '/menu',
+        permanent: true,
+        has: [
+          {
+            type: 'query',
+            key: 'utm_source',
+            value: 'in_store_tv',
+          },
+        ],
+      },
+    ]
+  },
 };
 
 export default config;
