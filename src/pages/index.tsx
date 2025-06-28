@@ -25,7 +25,7 @@ export default function Home() {
           <div className="absolute -right-2 top-4 z-10 rotate-12">
             <div className="relative">
               <div className="relative rounded-full bg-red-600 px-4 py-2 font-extrabold text-white shadow-[0_10px_20px_rgba(0,0,0,0.7)]">
-                <div className="text-center text-xs">OPENING SOON</div>
+                <div className="text-center text-xs">OPEN NOW!</div>
               </div>
             </div>
           </div>
@@ -41,7 +41,7 @@ export default function Home() {
           <div className="absolute right-8 top-12 z-10 hidden rotate-12 md:block">
             <div className="relative">
               <div className="relative rounded-full bg-red-600 px-6 py-3 font-extrabold text-white shadow-[0_15px_30px_rgba(0,0,0,0.7)]">
-                <div className="text-center text-sm">OPENING SOON</div>
+                <div className="text-center text-sm">OPEN NOW!</div>
               </div>
             </div>
           </div>
