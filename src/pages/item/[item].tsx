@@ -29,8 +29,29 @@ export default function ItemPage({ item, relatedItems }: ItemPageProps) {
         </div>
 
         <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-md">
-          <div className="flex flex-col gap-6 md:flex-row">
-            <div className="md:w-2/3">
+          <div className="flex flex-col gap-6">
+            {/* Image section */}
+            <div className="w-full">
+              <div className="relative mb-4 aspect-video w-full overflow-hidden rounded-lg bg-orange-100">
+                {item.image ? (
+                  <img
+                    src={item.image}
+                    alt={item.imageAlt || `${item.name} - ${item.description}`}
+                    className="h-full w-full object-cover"
+                  />
+                ) : (
+                  <div className="flex h-full items-center justify-center">
+                    <div className="text-center text-orange-600">
+                      <div className="text-2xl font-bold">{item.name}</div>
+                      <div className="text-sm">{item.category}</div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Content section */}
+            <div className="w-full">
               <h1 className="text-3xl font-bold text-orange-800">
                 {item.name}
               </h1>
@@ -46,11 +67,12 @@ export default function ItemPage({ item, relatedItems }: ItemPageProps) {
               <div className="my-6">
                 <h2 className="text-lg font-semibold">About this Dish</h2>
                 <p className="mt-2 text-gray-700">
-                  Our {item.name} is freshly prepared using traditional recipes
+                  {item.aboutTheDish ||
+                    `Our ${item.name} is freshly prepared using traditional recipes
                   and the finest ingredients. This authentic dish is a favorite
                   among our customers and represents the true flavors of Indian
                   cuisine. Each dish is carefully prepared by our chefs to
-                  ensure consistency and authentic taste.
+                  ensure consistency and authentic taste.`}
                 </p>
               </div>
 
@@ -77,19 +99,8 @@ export default function ItemPage({ item, relatedItems }: ItemPageProps) {
                   </Link>
                 </div>
               </div>
-            </div>
 
-            <div className="flex-1">
-              <div className="relative mb-4 h-60 w-full overflow-hidden rounded-lg bg-orange-100 md:h-80">
-                <div className="flex h-full items-center justify-center">
-                  <div className="text-center text-orange-600">
-                    <div className="text-2xl font-bold">{item.name}</div>
-                    <div className="text-sm">{item.category}</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="rounded-lg bg-gray-50 p-4">
+              <div className="mt-6 rounded-lg bg-gray-50 p-4">
                 <h3 className="font-semibold">Category</h3>
                 <Link
                   href={`/category/${encodeURIComponent(item.category.toLowerCase().replace(/\s+/g, "-"))}`}

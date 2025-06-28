@@ -3,6 +3,9 @@ export type MenuItem = {
   description: string;
   category: string;
   price?: string;
+  image?: string;
+  imageAlt?: string;
+  aboutTheDish?: string;
 };
 
 export const MVZMenuItems: MenuItem[] = [
@@ -327,6 +330,18 @@ export const MVZMenuItems: MenuItem[] = [
     description: "Tender chickpeas cooked in a mild, creamy white gravy",
     category: "Mains",
     price: "10.99",
+  },
+  {
+    name: "Chana Bhatura",
+    description:
+      "Fluffy deep-fried bread served with spiced chickpeas (chana masala), also known as Chole Bhature",
+    category: "Mains",
+    price: "12.99",
+    image: "/chana-bhatura.png",
+    imageAlt:
+      "Traditional Chana Bhatura (Chole Bhature) - golden puffy fried bread served alongside flavorful spiced chickpea curry, authentic North Indian street food dish",
+    aboutTheDish:
+      "Chana Bhatura, also known as Chole Bhature, is a beloved North Indian dish that combines two culinary masterpieces. The bhatura is a deep-fried, pillow-soft bread made from refined flour and yogurt, creating its signature puffy texture and golden color. Paired with rich, aromatic chole (chana masala) - chickpeas slow-cooked in a blend of traditional spices including cumin, coriander, and garam masala. This iconic combination has been a street food favorite across Punjab and North India for generations, representing the perfect balance of textures and flavors that make Indian cuisine so special. Whether you call it Chana Bhatura or Chole Bhature, this hearty dish delivers authentic taste and satisfying comfort food experience.",
   },
   {
     name: "Aloo Gobi",
