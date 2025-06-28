@@ -3,6 +3,7 @@ import { Layout } from "~/components/layout";
 import { SEO, MenuItemJSONLD } from "~/components/seo";
 import { MVZMenuItems } from "~/data/menuData";
 import Link from "next/link";
+import Image from "next/image";
 
 type ItemPageProps = {
   item: (typeof MVZMenuItems)[0];
@@ -34,10 +35,11 @@ export default function ItemPage({ item, relatedItems }: ItemPageProps) {
             <div className="w-full">
               <div className="relative mb-4 aspect-video w-full overflow-hidden rounded-lg bg-orange-100">
                 {item.image ? (
-                  <img
+                  <Image
                     src={item.image}
-                    alt={item.imageAlt || `${item.name} - ${item.description}`}
+                    alt={item.imageAlt ?? `${item.name} - ${item.description}`}
                     className="h-full w-full object-cover"
+                    fill
                   />
                 ) : (
                   <div className="flex h-full items-center justify-center">
@@ -67,7 +69,7 @@ export default function ItemPage({ item, relatedItems }: ItemPageProps) {
               <div className="my-6">
                 <h2 className="text-lg font-semibold">About this Dish</h2>
                 <p className="mt-2 text-gray-700">
-                  {item.aboutTheDish ||
+                  {item.aboutTheDish ??
                     `Our ${item.name} is freshly prepared using traditional recipes
                   and the finest ingredients. This authentic dish is a favorite
                   among our customers and represents the true flavors of Indian
