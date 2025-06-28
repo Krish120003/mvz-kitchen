@@ -416,6 +416,18 @@ export const MVZMenuItems: MenuItem[] = [
     category: "Mains",
     price: "10.99",
   },
+  {
+    name: "Amritsari Kulcha",
+    description:
+      "Golden stuffed flatbread served with spiced chickpea curry and tangy chutney and fresh Indian butter, authentic Punjabi street food from Amritsar.",
+    category: "Mains",
+    price: "13.99",
+    image: "/amritsari-kulcha.png",
+    imageAlt:
+      "Traditional Amritsari Kulcha (Amritsari Naan) - golden potato-stuffed flatbread served with spiced chickpea curry and tangy pickles, authentic Punjabi street food from Amritsar",
+    aboutTheDish:
+      "Amritsari Kulcha, also known as Amritsari Naan, is a legendary Punjabi dish that originated in the holy city of Amritsar. This iconic flatbread is traditionally stuffed with spiced mashed potatoes, onions, and fresh herbs, then baked in a tandoor oven until golden and crispy. The kulcha is typically served alongside rich chana masala (spiced chickpeas), tangy pickled onions, and mint chutney, creating a perfect harmony of flavors and textures. This beloved street food represents the heart of Punjabi cuisine and has been a staple in Amritsar's famous food lanes for generations. The combination of the fluffy, buttery kulcha with aromatic potato filling and the robust flavors of the accompaniments makes Amritsari Kulcha a truly authentic North Indian culinary experience.",
+  },
 
   // Breads
   {
