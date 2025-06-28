@@ -1,0 +1,92 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Add New Menu Item with Image Guide
+
+## Overview
+This guide covers the complete process for adding a new menu item with an image to the MVZ Kitchen website. Follow this checklist to ensure proper SEO optimization and consistent implementation.
+
+## File References
+- Main menu data: [src/data/menuData.ts](mdc:src/data/menuData.ts)
+- Catering menu data: [src/data/menu.ts](mdc:src/data/menu.ts) 
+- Item page template: [src/pages/item/[item].tsx](mdc:src/pages/item/[item].tsx)
+- Public images folder: [public/](mdc:public)
+
+## Checklist for Adding New Menu Item
+
+### 1. Image Preparation
+- [ ] **Move image to `/public/` folder** (e.g., `/public/dish-name.png`)
+- [ ] ✅ **Image quality already optimized**
+- [ ] **Consider aspect ratio** (16:9 works well for the current layout)
+- [ ] **Use descriptive filename** (e.g., `paneer-butter-masala.jpg` not `IMG_1234.jpg`)
+
+### 2. MenuItem Data Updates
+- [ ] **Add `image` field**: `image: "/dish-name.png"`
+- [ ] **Add `imageAlt` field** (highly recommended for SEO):
+  ```typescript
+  imageAlt: "Descriptive alt text with dish name, appearance, and context"
+  ```
+- [ ] **Add `aboutTheDish` field** (highly recommended for SEO):
+  ```typescript
+  aboutTheDish: "Detailed description with cultural context, ingredients, preparation method"
+  ```
+
+### 3. SEO Content Optimization
+- [ ] **Include alternative names** in description (like "also known as...")
+- [ ] **Add geographic keywords** (North Indian, Punjabi, street food, etc.)
+- [ ] **Include ingredient keywords** (spices, cooking methods, textures)
+- [ ] **Add cultural context** (traditional, authentic, popular, etc.)
+- [ ] **Consider search intent** (what would people search for?)
+
+### 4. Update Both Menu Files
+- [ ] **Update [src/data/menuData.ts](mdc:src/data/menuData.ts)** (main menu with pricing)
+- [ ] **Update [src/data/menu.ts](mdc:src/data/menu.ts)** (catering menu)
+- [ ] **Ensure consistency** between both files
+
+### 5. Content Quality Check
+- [ ] **Image alt text is descriptive** (not just dish name)
+- [ ] **About section tells a story** (history, preparation, why it's special)
+- [ ] **Description mentions key search terms** naturally
+- [ ] **Content is engaging** and appetizing
+
+### 6. Technical Verification
+- [ ] **Image displays correctly** on item page
+- [ ] **16:9 aspect ratio maintained** on all screen sizes
+- [ ] **Image loads properly** on both mobile and desktop
+- [ ] **Alt text appears** when image fails to load
+
+## Example Template
+```typescript
+{
+  name: "Dish Name",
+  description: "Short description, also known as Alternative Name",
+  category: "Category",
+  price: "X.XX",
+  image: "/dish-name.png",
+  imageAlt: "Traditional Dish Name (Alternative Name) - visual description, authentic [region] [food type]",
+  aboutTheDish: "Dish Name, also known as Alternative Name, is a [regional] dish that [history/context]. [Preparation details]. [Cultural significance]. [Ingredients and flavors]. [Why it's special].",
+}
+```
+
+## MenuItem Type Definition
+The MenuItem type supports these optional fields for enhanced SEO:
+```typescript
+export type MenuItem = {
+  name: string;
+  description: string;
+  category: string;
+  price?: string;
+  image?: string;
+  imageAlt?: string;
+  aboutTheDish?: string;
+};
+```
+
+## Layout Behavior
+The [item page template](mdc:src/pages/item/[item].tsx) automatically:
+- Shows image first on mobile, maintains single-column layout on desktop
+- Uses 16:9 aspect ratio for all images
+- Falls back to placeholder if no image provided
+- Uses custom `imageAlt` and `aboutTheDish` if available, with generic fallbacks
