@@ -47,18 +47,18 @@ const config = {
   async redirects() {
     return [
       {
-        source: '/full_menu',
-        destination: '/menu',
-        permanent: true,
+        source: "/full_menu",
+        destination: "/mvz-kitchen-trifold-menu.pdf",
+        permanent: false,
         has: [
           {
-            type: 'query',
-            key: 'utm_source',
-            value: 'in_store_tv',
+            type: "query",
+            key: "utm_source",
+            value: "in_store_tv",
           },
         ],
       },
-    ]
+    ];
   },
 };
 
