@@ -14,7 +14,7 @@ export default function CategoryPage() {
   return (
     <>
       <SEO
-        title="Indian Paranthas & Breads | Catering"
+        title="Indian Paranthas and Breads | Catering"
         description="Fresh, handmade Indian paranthas and breads for catering. Traditional and stuffed varieties available for events in Brampton and surrounding areas."
         keywords="Indian paranthas, stuffed paranthas, Indian breads, naan, roti, catering bread, vegetarian catering, Brampton"
         noIndex={true}
@@ -26,7 +26,7 @@ export default function CategoryPage() {
           </Link>
         </div>
 
-        <h1 className="mb-4 text-2xl font-bold">Indian Breads & Paranthas</h1>
+        <h1 className="mb-4 text-2xl font-bold">Indian Breads and Paranthas</h1>
 
         <p className="mb-8 mt-4">
           Complete your Indian feast with our freshly made breads and paranthas.

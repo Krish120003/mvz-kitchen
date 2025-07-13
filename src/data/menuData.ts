@@ -230,29 +230,29 @@ export const MVZMenuItems: MenuItem[] = [
     price: "8.99",
   },
 
-  // Chaap & Tikka
+  // Chaap and Tikka
   {
     name: "Malai Chaap",
     description: "Tender soya chaap soaked in creamy yogurt and mild spices",
-    category: "Chaap & Tikka",
+    category: "Chaap and Tikka",
     price: "8.99",
   },
   {
     name: "Tandoori Chaap",
     description: "Soya chaap pieces grilled in smoky tandoori masala",
-    category: "Chaap & Tikka",
+    category: "Chaap and Tikka",
     price: "8.99",
   },
   {
     name: "Achari Chaap",
     description: "Chaap marinated in tangy pickling spices and grilled",
-    category: "Chaap & Tikka",
+    category: "Chaap and Tikka",
     price: "8.99",
   },
   {
     name: "Hariyali Chaap",
     description: "Herb marinated chaap grilled with fresh mint and cilantro",
-    category: "Chaap & Tikka",
+    category: "Chaap and Tikka",
     price: "8.99",
   },
 
@@ -480,9 +480,9 @@ export const MVZMenuCategories = [
   "Snacks",
   "Burgers",
   "Wraps",
-  "Indo Chinese",
+  "Indo-Chinese",
   "Momos",
-  "Chaap n Tikka",
+  "Chaap and Tikka",
   "Sides",
   "Mains",
   "Breads",
