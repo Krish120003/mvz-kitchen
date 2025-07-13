@@ -79,7 +79,9 @@ export default function CategoryPage({
             {otherCategories.map((cat) => (
               <Link
                 key={cat}
-                href={`/category/${encodeURIComponent(cat.toLowerCase().replace(/\s+/g, "-"))}`}
+                href={`/category/${encodeURIComponent(
+                  cat.toLowerCase().replace(/\s+/g, "-").replace(/&/g, "and"),
+                )}`}
                 className="rounded-full bg-orange-100 px-4 py-2 font-medium text-orange-800 hover:bg-orange-200"
               >
                 {cat}

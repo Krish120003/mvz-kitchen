@@ -288,7 +288,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     "Momos",
     "Mains",
     "Indo-Chinese",
-    "Chaap & Tikka",
+    "Chaap and Tikka",
     "Wraps",
   ];
   const popularItems = selectedCategories
