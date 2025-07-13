@@ -95,7 +95,12 @@ export default function CategoryPage({
 export const getStaticPaths: GetStaticPaths = async () => {
   // Generate paths for all menu categories
   const paths = MVZMenuCategories.map((category) => ({
-    params: { category: category.toLowerCase().replace(/\s+/g, "-") },
+    params: {
+      category: category
+        .toLowerCase()
+        .replace(/\s+/g, "-")
+        .replace(/&/g, "and"),
+    },
   }));
 
   return {
@@ -107,10 +112,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const category = params?.category as string;
 
-  // Convert slug format back to original category name for data lookup
-  const formattedCategory = category.replace(/-/g, " ");
+  // Find the original category name by comparing the slug
   const originalCategory = MVZMenuCategories.find(
-    (cat) => cat.toLowerCase() === formattedCategory.toLowerCase(),
+    (cat) => cat.toLowerCase().replace(/\s+/g, "-").replace(/&/g, "and") === category,
   );
 
   if (!originalCategory) {
