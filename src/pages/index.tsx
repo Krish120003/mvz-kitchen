@@ -5,6 +5,49 @@ import { MVZFeaturedItems, MVZMenuCategories } from "~/data/menuData";
 import Link from "next/link";
 import { env } from "~/env";
 
+interface Testimonal {
+  name: string;
+  review: string;
+}
+
+interface TestimonialItemProps extends React.HTMLAttributes<HTMLDivElement> {
+  testimonial: Testimonal;
+}
+
+function TestimonialItem({testimonial, className, ...props}: TestimonialItemProps) {
+  return (
+    <div className={`rounded-lg bg-white p-4 shadow-md border  ${className} flex justify-between flex-col`} {...props}>
+      <p className="text-sm text-gray-700">
+        "{testimonial.review}"
+      </p>
+      
+      <div><p className="mt-2 font-bold">{testimonial.name}</p>{[...new Array(5)].map(
+        (_, index) => (
+          <span key={index} className="text-yellow-500">
+            ⭐
+          </span>
+        )
+      )}</div>
+    </div>
+  );
+}
+
+
+const testimonials: Testimonal[] = [
+  {
+    name: "Har Preet",
+    review: "Tried noodle burger and it was so crispy and delicious. The lime mojito was super refreshing, and the dahi puri was the perfect mix of sweet, tangy, and crunchy. Really enjoyed every bite.",
+  },
+  {
+    name: "Jainish Patel",
+    review: "I recently tried the Tara Soya Chaap and Kulcha from MV’Z Kitchen, and it was absolutely delicious! The soya chaap was perfectly marinated—flavorful, juicy, and had just the right amount of spice. The portion size was generous, and everything was served hot and fresh.",
+  },
+  {
+    name: "Sunny Singh",
+    review: "Amazing staff and great customer care with exceptional food, I have been to this place first time and I found they do really care about their customers experience. Recommended",
+  },
+];
+
 export default function Home() {
   return (
     <>
@@ -52,6 +95,23 @@ export default function Home() {
           savor a fusion of traditional flavors and modern twists, bringing the
           vibrant tastes of authentic Indian cuisine to you.
         </p>
+
+        <div className="pt-4">
+          <h2 className="mb-4 text-xl font-extrabold ">Testimonials</h2>
+          <div className="grid md:grid-cols-3 grid-cols-1 gap-4">
+            {testimonials.map((testimonial, index) => (
+              <TestimonialItem
+                key={index}
+                testimonial={testimonial}
+                className="mb-4"
+                style={{
+                  transform: `rotate(${((index * 5) % 11) - 5}deg)`,
+                }}
+              />
+            ))}
+          </div>
+        </div>
+
 
         {/* Featured Items Section */}
         <div className="my-10">
