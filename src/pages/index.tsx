@@ -18,16 +18,10 @@ function TestimonialItem({testimonial, className, ...props}: TestimonialItemProp
   return (
     <div className={`rounded-lg bg-white p-4 shadow-md border  ${className} flex justify-between flex-col`} {...props}>
       <p className="text-sm text-gray-700">
-        "{testimonial.review}"
+        {'"'}{testimonial.review}{'"'}
       </p>
-      
-      <div><p className="mt-2 font-bold">{testimonial.name}</p>{[...new Array(5)].map(
-        (_, index) => (
-          <span key={index} className="text-yellow-500">
-            ⭐
-          </span>
-        )
-      )}</div>
+
+      <div><p className="mt-2 font-bold">{testimonial.name}</p>⭐⭐⭐⭐⭐</div>
     </div>
   );
 }
