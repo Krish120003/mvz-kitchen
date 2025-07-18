@@ -17,7 +17,7 @@ export default function Home() {
       <Layout>
         <div className="relative mb-8 h-48 scale-110 overflow-hidden object-cover md:hidden">
           <Image
-            src="/hero.jpeg"
+            src="/food-hero.jpeg"
             alt="Authentic Vegetarian Indian Food at MVZ Kitchen Brampton"
             className="object-cover"
             fill
@@ -32,11 +32,11 @@ export default function Home() {
         </div>
         <div className="relative">
           <Image
-            src="/HeroCropped.png"
+            src="/food-hero.jpeg"
             alt="Authentic Vegetarian Indian Food at MVZ Kitchen Brampton"
             width={2402}
             height={1407}
-            className="hidden w-full md:block"
+            className="hidden w-full md:block rounded-lg pb-4"
           />
           <div className="absolute right-8 top-12 z-10 hidden rotate-12 md:block">
             <div className="relative">
