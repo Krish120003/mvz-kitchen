@@ -130,7 +130,7 @@ export default function Home() {
             <br />
             <div className="grid grid-cols-1 gap-2">
               <p className="grid grid-cols-2 border-b border-black">
-                <span className="font-bold">Mon - Fri</span> 9 AM to 9 PM
+                <span className="font-bold">Mon - Fri</span> 11 AM to 9 PM
               </p>
 
               {/* <p className="grid grid-cols-2 border-b border-black">
@@ -138,7 +138,7 @@ export default function Home() {
               </p> */}
 
               <p className="grid grid-cols-2 border-b border-black">
-                <span className="font-bold">Sat, Sun</span> 9 AM to 10 PM
+                <span className="font-bold">Sat, Sun</span> 11 AM to 9 PM
               </p>
             </div>
           </div>
