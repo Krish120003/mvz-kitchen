@@ -30,11 +30,11 @@ function TestimonialItem({testimonial, className, ...props}: TestimonialItemProp
 const testimonials: Testimonal[] = [
   {
     name: "Har Preet",
-    review: "Tried noodle burger and it was so crispy and delicious. The lime mojito was super refreshing, and the dahi puri was the perfect mix of sweet, tangy, and crunchy. Really enjoyed every bite.",
+    review: "Tried noodle burger and it was so crispy and delicious. The lemon mojito was super refreshing, and the dahi puri was the perfect mix of sweet, tangy, and crunchy. Really enjoyed every bite.",
   },
   {
     name: "Jainish Patel",
-    review: "I recently tried the Tara Soya Chaap and Kulcha from MV’Z Kitchen, and it was absolutely delicious! The soya chaap was perfectly marinated—flavorful, juicy, and had just the right amount of spice. The portion size was generous, and everything was served hot and fresh.",
+    review: "I recently tried the Tawa Soya Chaap and Kulcha from MV’Z Kitchen, and it was absolutely delicious! The soya chaap was perfectly marinated—flavorful, juicy, and had just the right amount of spice. The portion size was generous, and everything was served hot and fresh.",
   },
   {
     name: "Sunny Singh",
