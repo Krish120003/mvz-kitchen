@@ -472,6 +472,84 @@ export const MVZMenuItems: MenuItem[] = [
     category: "Breads",
     price: "0.99",
   },
+
+  // Paranthas
+  {
+    name: "Plain Tawa Parantha",
+    description: "Traditional flatbread cooked on tawa (2 pieces)",
+    category: "Paranthas",
+    price: "9.99",
+  },
+  {
+    name: "Aloo Pyaz Parantha",
+    description:
+      "Stuffed flatbread with spiced potato and onion filling (2 pieces)",
+    category: "Paranthas",
+    price: "11.99",
+  },
+  {
+    name: "Gobi Parantha",
+    description: "Stuffed flatbread with spiced cauliflower filling (2 pieces)",
+    category: "Paranthas",
+    price: "11.99",
+  },
+  {
+    name: "Mix Parantha",
+    description: "Stuffed flatbread with mixed vegetable filling (2 pieces)",
+    category: "Paranthas",
+    price: "12.99",
+  },
+  {
+    name: "Paneer Parantha",
+    description: "Stuffed flatbread with spiced paneer filling (2 pieces)",
+    category: "Paranthas",
+    price: "12.99",
+  },
+  {
+    name: "Tandoori Aloo Parantha",
+    description: "Tandoor-baked flatbread with spiced potato filling (1 piece)",
+    category: "Paranthas",
+    price: "12.99",
+  },
+  {
+    name: "Tandoori Gobi Parantha",
+    description:
+      "Tandoor-baked flatbread with spiced cauliflower filling (1 piece)",
+    category: "Paranthas",
+    price: "12.99",
+  },
+  {
+    name: "Tandoori Mix Parantha",
+    description:
+      "Tandoor-baked flatbread with mixed vegetable filling (1 piece)",
+    category: "Paranthas",
+    price: "12.99",
+  },
+  {
+    name: "Tandoori Paneer Parantha",
+    description: "Tandoor-baked flatbread with spiced paneer filling (1 piece)",
+    category: "Paranthas",
+    price: "13.99",
+  },
+  {
+    name: "Onion Kulcha",
+    description: "Soft leavened bread stuffed with spiced onions (1 piece)",
+    category: "Paranthas",
+    price: "12.99",
+  },
+  {
+    name: "Paneer Kulcha",
+    description: "Soft leavened bread stuffed with spiced paneer (1 piece)",
+    category: "Paranthas",
+    price: "13.99",
+  },
+  {
+    name: "Amritsari Kulcha with Chana",
+    description:
+      "Traditional Amritsari kulcha served with spiced chickpea curry (1 piece)",
+    category: "Paranthas",
+    price: "13.99",
+  },
 ];
 
 // List of menu categories for filtering/navigation
@@ -483,8 +561,9 @@ export const MVZMenuCategories = [
   "Indo Chinese",
   "Momos",
   "Chaap n Tikka",
-  "Sides",
+  "Paranthas",
   "Mains",
+  "Sides",
   "Breads",
 ];
 
