@@ -5,6 +5,43 @@ import { MVZFeaturedItems, MVZMenuCategories } from "~/data/menuData";
 import Link from "next/link";
 import { env } from "~/env";
 
+interface Testimonal {
+  name: string;
+  review: string;
+}
+
+interface TestimonialItemProps extends React.HTMLAttributes<HTMLDivElement> {
+  testimonial: Testimonal;
+}
+
+function TestimonialItem({testimonial, className, ...props}: TestimonialItemProps) {
+  return (
+    <div className={`rounded-lg bg-white p-4 shadow-md border  ${className} flex justify-between flex-col`} {...props}>
+      <p className="text-sm text-gray-700">
+        {'"'}{testimonial.review}{'"'}
+      </p>
+
+      <div><p className="mt-2 font-bold">{testimonial.name}</p>⭐⭐⭐⭐⭐</div>
+    </div>
+  );
+}
+
+
+const testimonials: Testimonal[] = [
+  {
+    name: "Har Preet",
+    review: "Tried noodle burger and it was so crispy and delicious. The lemon mojito was super refreshing, and the dahi puri was the perfect mix of sweet, tangy, and crunchy. Really enjoyed every bite.",
+  },
+  {
+    name: "Jainish Patel",
+    review: "I recently tried the Tawa Soya Chaap and Kulcha from MV’Z Kitchen, and it was absolutely delicious! The soya chaap was perfectly marinated—flavorful, juicy, and had just the right amount of spice. The portion size was generous, and everything was served hot and fresh.",
+  },
+  {
+    name: "Sunny Singh",
+    review: "Amazing staff and great customer care with exceptional food, I have been to this place first time and I found they do really care about their customers experience. Recommended",
+  },
+];
+
 export default function Home() {
   return (
     <>
@@ -17,7 +54,7 @@ export default function Home() {
       <Layout>
         <div className="relative mb-8 h-48 scale-110 overflow-hidden object-cover md:hidden">
           <Image
-            src="/hero.jpeg"
+            src="/food-hero.jpeg"
             alt="Authentic Vegetarian Indian Food at MVZ Kitchen Brampton"
             className="object-cover"
             fill
@@ -32,11 +69,11 @@ export default function Home() {
         </div>
         <div className="relative">
           <Image
-            src="/HeroCropped.png"
+            src="/food-hero.jpeg"
             alt="Authentic Vegetarian Indian Food at MVZ Kitchen Brampton"
             width={2402}
             height={1407}
-            className="hidden w-full md:block"
+            className="hidden w-full md:block rounded-lg pb-4"
           />
           <div className="absolute right-8 top-12 z-10 hidden rotate-12 md:block">
             <div className="relative">
@@ -52,6 +89,23 @@ export default function Home() {
           savor a fusion of traditional flavors and modern twists, bringing the
           vibrant tastes of authentic Indian cuisine to you.
         </p>
+
+        <div className="pt-4">
+          <h2 className="mb-4 text-xl font-extrabold ">Testimonials</h2>
+          <div className="grid md:grid-cols-3 grid-cols-1 gap-4">
+            {testimonials.map((testimonial, index) => (
+              <TestimonialItem
+                key={index}
+                testimonial={testimonial}
+                className="mb-4"
+                style={{
+                  transform: `rotate(${((index * 5) % 11) - 5}deg)`,
+                }}
+              />
+            ))}
+          </div>
+        </div>
+
 
         {/* Featured Items Section */}
         <div className="my-10">
@@ -130,7 +184,7 @@ export default function Home() {
             <br />
             <div className="grid grid-cols-1 gap-2">
               <p className="grid grid-cols-2 border-b border-black">
-                <span className="font-bold">Mon - Fri</span> 9 AM to 9 PM
+                <span className="font-bold">Mon - Fri</span> 11 AM to 9 PM
               </p>
 
               {/* <p className="grid grid-cols-2 border-b border-black">
@@ -138,7 +192,7 @@ export default function Home() {
               </p> */}
 
               <p className="grid grid-cols-2 border-b border-black">
-                <span className="font-bold">Sat, Sun</span> 9 AM to 10 PM
+                <span className="font-bold">Sat, Sun</span> 11 AM to 9 PM
               </p>
             </div>
           </div>

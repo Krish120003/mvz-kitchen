@@ -14,7 +14,7 @@ export default function CategoryPage() {
   return (
     <>
       <SEO
-        title="Indian Appetizers & Starters | Catering"
+        title="Indian Appetizers and Starters | Catering"
         description="Delicious vegetarian Indian appetizers and starters for catering events. Traditional chaats, samosas, and more for parties and events in Brampton and surrounding areas."
         keywords="Indian appetizers, vegetarian starters, Indian party food, chaats, samosas, pakoras, catering appetizers, Brampton"
         noIndex={true}
@@ -27,7 +27,7 @@ export default function CategoryPage() {
         </div>
 
         <h1 className="mb-4 text-2xl font-bold">
-          Indian Appetizers & Starters
+          Indian Appetizers and Starters
         </h1>
 
         <p className="mb-8 mt-4">
