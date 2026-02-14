@@ -8,9 +8,10 @@ import MobileFooter from "./MobileFooter"; // Adjust path if necessary, but shou
 
 interface LayoutProps {
   children: React.ReactNode;
+  hideMobileFooter?: boolean;
 }
 
-export function Layout({ children }: LayoutProps) {
+export function Layout({ children, hideMobileFooter = false }: LayoutProps) {
   const router = useRouter();
 
   const activePage: string = router.pathname;
@@ -236,7 +237,7 @@ export function Layout({ children }: LayoutProps) {
           Reserved.
         </p>
       </footer>
-      <MobileFooter /> {/* <--- Add the new component here */}
+      {!hideMobileFooter && <MobileFooter />}
     </>
   );
 }

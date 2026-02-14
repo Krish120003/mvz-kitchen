@@ -42,7 +42,7 @@ export default function VegetarianThali() {
           }),
         }}
       />
-      <Layout>
+      <Layout hideMobileFooter>
         {/* Hero - Photo First */}
         <div className="relative">
           <div className="relative aspect-[4/5] w-full md:aspect-[16/9] md:h-[70vh]">
