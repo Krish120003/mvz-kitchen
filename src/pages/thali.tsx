@@ -73,7 +73,7 @@ export default function VegetarianThali() {
             <div className="flex flex-col gap-3 md:flex-row md:justify-center">
               <a
                 href="tel:+13653780009"
-                className="flex items-center justify-center rounded-full bg-orange-600 px-6 py-4 text-lg font-bold text-white shadow-lg transition-all hover:bg-orange-700 hover:scale-105 md:px-10 md:py-5 md:text-xl"
+                className="flex items-center justify-center rounded-full bg-orange-600 px-6 py-4 text-lg font-bold text-white shadow-lg transition-all hover:scale-105 hover:bg-orange-700 md:px-10 md:py-5 md:text-xl"
               >
                 <svg
                   className="mr-2 h-5 w-5 md:h-6 md:w-6"
@@ -88,7 +88,7 @@ export default function VegetarianThali() {
                 href="https://maps.google.com/?q=9280+Goreway+Dr+Unit+C107,+Brampton,+ON+L6T+0C4"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center rounded-full bg-white px-6 py-4 text-lg font-bold text-gray-900 shadow-lg transition-all hover:bg-gray-100 hover:scale-105 md:px-10 md:py-5 md:text-xl"
+                className="flex items-center justify-center rounded-full bg-white px-6 py-4 text-lg font-bold text-gray-900 shadow-lg transition-all hover:scale-105 hover:bg-gray-100 md:px-10 md:py-5 md:text-xl"
               >
                 <svg
                   className="mr-2 h-5 w-5 md:h-6 md:w-6"
@@ -119,7 +119,7 @@ export default function VegetarianThali() {
             {[
               { title: "Dal", emoji: "🫘" },
               { title: "Sabzi", emoji: "🥬" },
-              { title: "Rice: "🥬", emoji: "🍚" },
+              { title: "Rice", emoji: "🍚" },
               { title: "Bread", emoji: "🫓" },
               { title: "Raita", emoji: "🥒" },
               { title: "Pickle", emoji: "🫛" },
@@ -131,7 +131,9 @@ export default function VegetarianThali() {
                 className="flex flex-col items-center rounded-lg bg-orange-50 p-3 text-center"
               >
                 <span className="mb-1 text-2xl">{item.emoji}</span>
-                <span className="font-semibold text-gray-800">{item.title}</span>
+                <span className="font-semibold text-gray-800">
+                  {item.title}
+                </span>
               </div>
             ))}
           </div>
@@ -173,7 +175,8 @@ export default function VegetarianThali() {
             <p className="mb-2 text-gray-600">9280 Goreway Dr, Unit C107</p>
             <p className="mb-4 text-gray-600">Brampton, ON L6T 0C4</p>
             <p className="mb-4 text-gray-600">
-              <span className="font-semibold">Hours:</span> Mon-Sun: 11 AM - 9 PM
+              <span className="font-semibold">Hours:</span> Mon-Sun: 11 AM - 9
+              PM
             </p>
             <a
               href="tel:+13653780009"
