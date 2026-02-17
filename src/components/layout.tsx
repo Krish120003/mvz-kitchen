@@ -24,10 +24,10 @@ export function Layout({ children, hideMobileFooter = false }: LayoutProps) {
             {/* invisible selectable text */}
 
             <Link href={"/"} className="">
-              <h1>
-                <span className="select-none opacity-0" draggable={false}>
-                  MV&apos;z Kitchenn
-                </span>
+              <div>
+                <h1 className="select-none opacity-0" draggable={false}>
+                  {"MV'Z Kitchen"}
+                </h1>
                 <Image
                   src="/logo_plain_orange.png"
                   alt="MV'z Kitchen written in orange as text"
@@ -45,7 +45,7 @@ export function Layout({ children, hideMobileFooter = false }: LayoutProps) {
                   draggable="false"
                   className="-mb-12 -mt-8 w-full lg:hidden"
                 /> */}
-              </h1>
+              </div>
             </Link>
 
             <div className="mb-8 grid grid-cols-2">
