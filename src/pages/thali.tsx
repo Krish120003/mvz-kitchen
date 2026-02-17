@@ -24,9 +24,10 @@ export default function VegetarianThali() {
               "@type": "Brand",
               name: "MVZ Kitchen",
             },
+            image: "https://mvzkitchen.ca/daily-thali.jpeg",
             offers: {
               "@type": "Offer",
-              price: "11.99",
+              price: "12.99",
               priceCurrency: "CAD",
               availability: "https://schema.org/InStock",
               seller: {
