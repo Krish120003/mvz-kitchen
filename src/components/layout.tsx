@@ -18,7 +18,7 @@ export function Layout({ children, hideMobileFooter = false }: LayoutProps) {
 
   return (
     <>
-      <main className="min-h-screen bg-[#ffffff] p-4 md:px-8">
+      <main className="min-h-screen bg-[#ffffff] p-4 pt-0 md:px-8">
         <section className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-3 lg:gap-8">
           <div className="flex flex-col gap-2 lg:min-h-screen">
             {/* invisible selectable text */}
@@ -51,7 +51,7 @@ export function Layout({ children, hideMobileFooter = false }: LayoutProps) {
             <div className="mb-8 grid grid-cols-2">
               <Link href={"/"} className="lg:hidden">
                 <Image
-                  className="h-32 w-32"
+                  className="h-24 w-24"
                   width={1024}
                   height={1024}
                   src={"/logo.png"}

@@ -36,18 +36,19 @@ export default function VegetarianThali() {
             },
             aggregateRating: {
               "@type": "AggregateRating",
-              ratingValue: "4.8",
-              reviewCount: "127",
+              ratingValue: "4.9",
+              reviewCount: "1120",
             },
           }),
         }}
       />
       <Layout hideMobileFooter>
         {/* Hero - Photo First */}
+        <h1 className="text-center text-2xl font-bold">Vegetarian Thali</h1>
         <div className="relative">
           <div className="relative aspect-[4/5] w-full md:aspect-[16/9] md:h-[70vh]">
             <Image
-              src="/food-hero.jpeg"
+              src="/daily-thali.jpeg"
               alt="Delicious Vegetarian Thali at MVZ Kitchen Brampton"
               fill
               className="object-cover"
@@ -60,7 +61,7 @@ export default function VegetarianThali() {
           <div className="absolute left-4 top-4 rounded-xl bg-white px-4 py-2 shadow-xl md:left-8 md:top-8 md:px-6 md:py-3">
             <div className="text-center">
               <div className="text-2xl font-extrabold text-orange-600 md:text-3xl">
-                $11.99
+                $12.99
               </div>
               <div className="text-sm font-medium text-gray-600 md:text-base">
                 Complete Meal
@@ -105,7 +106,7 @@ export default function VegetarianThali() {
               </a>
             </div>
             <p className="mt-3 text-center text-sm text-white/80 md:text-base">
-              Freshly prepared • Ready in 15 minutes
+              Freshly prepared
             </p>
           </div>
         </div>
