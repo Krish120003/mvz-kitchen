@@ -412,7 +412,7 @@ export const MVZMenuItems: MenuItem[] = [
   {
     name: "Paneer Bhurji",
     description:
-      "Scrambled paneer or egg cooked with onions, tomatoes, and spices",
+      "Scrambled paneer cooked with onions, tomatoes, and spices",
     category: "Mains",
     price: "10.99",
   },

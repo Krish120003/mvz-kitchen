@@ -176,7 +176,7 @@ Cheese Chilli 10.99
 Crispy paneer tossed with peppers in a
 spicy chili sauce
 Paneer Bhurji 10.99
-Scrambled paneer or egg cooked with
+Scrambled paneer cooked with
 onions, tomatoes, and spices
 Breads
 Plain Naan 0.99
