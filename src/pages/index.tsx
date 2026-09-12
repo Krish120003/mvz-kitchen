@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Layout } from "~/components/layout";
 import { SEO, RestaurantJSONLD } from "~/components/seo";
 import { MVZFeaturedItems, MVZMenuCategories } from "~/data/menuData";
+import { GROUPED_OPENING_HOURS } from "~/data/timings";
 import Link from "next/link";
 import { env } from "~/env";
 
@@ -183,17 +184,15 @@ export default function Home() {
             <h2 className="text-lg font-extrabold">Hours</h2>
             <br />
             <div className="grid grid-cols-1 gap-2">
-              <p className="grid grid-cols-2 border-b border-black">
-                <span className="font-bold">Mon - Fri</span> 11 AM to 9 PM
-              </p>
-
-              {/* <p className="grid grid-cols-2 border-b border-black">
-                <span className="font-bold">Wed - Fri</span> 3 PM to 9 PM
-              </p> */}
-
-              <p className="grid grid-cols-2 border-b border-black">
-                <span className="font-bold">Sat, Sun</span> 11 AM to 9 PM
-              </p>
+              {GROUPED_OPENING_HOURS.map((group) => (
+                <p
+                  key={group.label}
+                  className="grid grid-cols-2 border-b border-black"
+                >
+                  <span className="font-bold">{group.label}</span>{" "}
+                  {group.displayHours}
+                </p>
+              ))}
             </div>
           </div>
           {!env.NEXT_PUBLIC_HIDE_ADDRESS && (

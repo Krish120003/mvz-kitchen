@@ -2,6 +2,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { MVZMenuItems, MVZMenuCategories } from "~/data/menuData";
 import { MAIN_LOCATION, SERVICE_LOCATIONS } from "~/data/locationData";
+import { OPENING_HOURS_BY_DAY } from "~/data/timings";
 
 type SEOProps = {
   title?: string;
@@ -110,10 +111,8 @@ export const RestaurantJSONLD = ({
   const addressRegion = MAIN_LOCATION.address?.province ?? "ON";
   const addressPostalCode = MAIN_LOCATION.address?.postalCode ?? "L6T 0C4";
 
-  // Generate opening hours from MAIN_LOCATION data
-  const openingHoursSpecification = Object.entries(
-    MAIN_LOCATION.openingHours ?? {},
-  )
+  // Generate opening hours from canonical timings data
+  const openingHoursSpecification = Object.entries(OPENING_HOURS_BY_DAY)
     .filter(([_, hours]) => hours !== "Closed") // Filter out closed days
     .map(([day, hours]) => {
       // Parse opening hours format: "3:00 PM - 9:00 PM" into 24-hour format

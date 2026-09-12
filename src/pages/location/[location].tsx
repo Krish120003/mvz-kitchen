@@ -4,6 +4,7 @@ import { Layout } from "~/components/layout";
 import { SEO, RestaurantJSONLD } from "~/components/seo";
 import { ALL_LOCATIONS } from "~/data/locationData";
 import { MVZMenuItems, MVZMenuCategories } from "~/data/menuData";
+import { GROUPED_OPENING_HOURS } from "~/data/timings";
 import Link from "next/link";
 import { env } from "~/env";
 
@@ -112,15 +113,15 @@ export default function LocationPage({
                 <div>
                   <h2 className="mb-4 text-xl font-bold">Hours of Operation</h2>
                   <div className="rounded-lg bg-orange-50 p-4">
-                    {locationInfo.openingHours &&
-                      Object.entries(locationInfo.openingHours).map(
-                        ([day, hours]) => (
-                          <div key={day} className="mb-2 flex justify-between">
-                            <span className="font-semibold">{day}</span>
-                            <span>{hours}</span>
-                          </div>
-                        ),
-                      )}
+                    {GROUPED_OPENING_HOURS.map((group) => (
+                      <div
+                        key={group.label}
+                        className="mb-2 flex justify-between"
+                      >
+                        <span className="font-semibold">{group.label}</span>
+                        <span>{group.hours}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </>

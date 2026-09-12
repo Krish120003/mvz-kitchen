@@ -1,3 +1,5 @@
+import { OPENING_HOURS_BY_DAY } from "./timings";
+
 export type LocationInfo = {
   name: string;
   title: string;
@@ -46,13 +48,7 @@ export const MAIN_LOCATION: LocationInfo = {
   phone: "+1 (365) 378-0009",
   email: "order@mvzkitchen.ca",
   openingHours: {
-    Monday: "11:00 AM - 9:00 PM",
-    Tuesday: "11:00 AM - 9:00 PM",
-    Wednesday: "11:00 AM - 9:00 PM",
-    Thursday: "11:00 AM - 9:00 PM",
-    Friday: "11:00 AM - 9:00 PM",
-    Saturday: "11:00 AM - 9:00 PM",
-    Sunday: "11:00 AM - 9:00 PM",
+    ...OPENING_HOURS_BY_DAY,
   },
   isMainLocation: true,
   nearbyNeighborhoods: [
