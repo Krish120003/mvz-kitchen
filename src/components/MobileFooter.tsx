@@ -9,8 +9,7 @@ const MobileFooter = () => {
   const address = "9280 Goreway Dr, Unit C107, Brampton, ON L6T 0C4";
   const phoneNumberHref = "tel:+13653780009";
   const phoneNumberDisplay = "+1 (365) 378-0009"; // Slightly more readable display
-  const cloverOrderUrl =
-    "https://www.clover.com/online-ordering/mvz-kitchen-brampton";
+  const menuPdfUrl = "/mvz-kitchen-trifold-menu.pdf";
 
   const variant = useFeatureFlagVariantKey("mobile-floating-button-conversion");
 
@@ -47,7 +46,7 @@ const MobileFooter = () => {
           Join Wait Queue
         </a>
         <a
-          href={cloverOrderUrl}
+          href={menuPdfUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="w-full rounded-md bg-orange-500 px-4 py-2 text-center font-bold text-white hover:bg-orange-600"
@@ -55,7 +54,7 @@ const MobileFooter = () => {
             // Determine the actual text being displayed at the moment of click,
             // which is already available in the `buttonText` variable.
             // The `variant` variable should also be available from the hook.
-            // The `cloverOrderUrl` constant holds the link URL.
+            // The `menuPdfUrl` constant holds the link URL.
 
             // Ensure variant has a fallback for safety, though the hook usually provides 'control' or false.
             const currentVariant = variant ?? "control"; // Or some other sensible default if variant can be null/undefined
@@ -63,13 +62,13 @@ const MobileFooter = () => {
             posthog.capture("mobile_footer_button_click", {
               button_variant: currentVariant,
               button_text: buttonText, // This is the text currently displayed
-              link_url: cloverOrderUrl,
+              link_url: menuPdfUrl,
             });
 
             // Optional: If navigation needs to be manually handled after PostHog capture
             // for SPA-like behavior or if target="_blank" is problematic with analytics,
             // you could do:
-            // window.open(cloverOrderUrl, '_blank');
+            // window.open(menuPdfUrl, '_blank');
             // return false; // if it's a link that shouldn't also navigate via href
             // However, for a simple <a> tag with target="_blank", letting the default action proceed after capturing is usually fine.
           }}
